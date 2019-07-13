@@ -1,3 +1,6 @@
+# Plugin bundles
+*.plug.bundle
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -8,8 +11,11 @@ __pycache__/
 .dmypy.json
 dmypy.json
 
+# pytest
+.pytest_cache/
+
 # Zsh files
-.z*
+/.z*
 
 # doit.py
 .doit.db
