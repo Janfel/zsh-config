@@ -1,0 +1,3 @@
+#CASE_SENSITIVE=false
+HIST_STAMPS=yyyy-mm-dd
+HYPHEN_INSENSITIVE=true

@@ -1,0 +1,8 @@
+# Must be last
+
+# Highlighting BEFORE substring search but AFTER everything else
+
+zsh-users/zsh-syntax-highlighting
+#zdharma/fast-syntax-highlighting
+
+zsh-users/zsh-history-substring-search

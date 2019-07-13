@@ -1,0 +1,4 @@
+robbyrussell/oh-my-zsh path:lib/completion.zsh
+robbyrussell/oh-my-zsh path:lib/directories.zsh
+robbyrussell/oh-my-zsh path:lib/key-bindings.zsh
+robbyrussell/oh-my-zsh path:lib/history.zsh
