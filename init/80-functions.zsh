@@ -3,9 +3,9 @@ alias ed=edit
 
 mkcd() { mkdir -p "$@" && cd "$1" }
 
-update_zsh() { (cd $ZDOTDIR && doit compile) }
+update_zsh() { $ZDOTDIR/zsh-cfg bundle compile) }
 
-upgrade_zsh() { (cd $ZDOTDIR && doit compile update) }
+upgrade_zsh() { update_zsh && antibody update }
 
 whose() { /usr/bin/yay --files --owns "/usr/bin/$@" }
 
