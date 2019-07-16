@@ -23,6 +23,7 @@ for command; do
     case $command in
         bundle)   bundle ;;
         compile)  compile ;;
+        update)   antibody update ;;
         *)        echo 'Subcommands: compile  bundle' ;;
     esac
 done
