@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+cd $ZDOTDIR || exit 1
+
+typeset -A files=(init .zshrc env .zshenv profile .zprofile)
+
+function bundle() {
+    for dir in ${(k)files}; do
+        for plug in $dir/*.plug(N); do
+            antibody bundle < $plug > $plug.bundle
+            print -u2 "Created: $plug.bundle"
+        done
+    done
+}
+
+function compile() {
+    for dir file in ${(kv)files}; do
+        cat $dir/*.(zsh|bundle)(N) | rg -v '^\s*(#|$)' > $file
+        print -u2 "Created: $file"
+    done
+}
+
+for command; do
+    case $command in
+        bundle)   bundle ;;
+        compile)  compile ;;
+        *)        echo 'Subcommands: compile  bundle' ;;
+    esac
+done
+
+unfunction bundle compile
+cd $OLDPWD
