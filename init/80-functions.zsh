@@ -3,7 +3,7 @@ alias ed=edit
 
 mkcd() { mkdir -p "$@" && cd "$1" }
 
-update_zsh() { $ZDOTDIR/zsh-cfg bundle compile) }
+update_zsh() { $ZDOTDIR/zsh-cfg bundle compile }
 
 upgrade_zsh() { update_zsh && antibody update }
 
