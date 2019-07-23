@@ -11,6 +11,7 @@ alias open=kde-open5
 alias py=python
 alias mi=micro
 alias vi=nvim
+alias sudovi="sudo -E nvim"
 
 alias cp="cp -i"
 alias diff="diff --color=auto"
