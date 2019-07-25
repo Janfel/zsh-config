@@ -1,0 +1,3 @@
+export BZRPATH="$XDG_DATA_HOME/bazaar"
+export BZR_HOME="$XDG_CACHE_HOME/bazaar"
+export BZR_PLUGIN_PATH="$XDG_DATA_HOME/bazaar"

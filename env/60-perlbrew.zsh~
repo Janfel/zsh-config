@@ -1,0 +1,2 @@
+export PERLBREW_ROOT="$XDG_DATA_HOME/perlbrew"
+export PERLBREW_HOME="$XDG_CONFIG_HOME/perlbrew"
