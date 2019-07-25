@@ -9,6 +9,8 @@ alias tree="lsd --tree"
 
 alias open=kde-open5
 alias py=python
+alias pym="python -m"
+alias venv="python -m venv"
 alias mi=micro
 alias vi=nvim
 alias sudovi="sudo -E nvim"
