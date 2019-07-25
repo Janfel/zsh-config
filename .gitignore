@@ -19,5 +19,3 @@ dmypy.json
 
 # doit.py
 .doit.db
-
-!*~
