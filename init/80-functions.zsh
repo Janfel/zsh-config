@@ -5,7 +5,7 @@ mkcd() { mkdir -p "$@" && cd "$1" }
 update_zsh() { $ZDOTDIR/zsh-cfg bundle compile }
 
 # Recompiles the zsh configuration and updates the cached packages
-upgrade_zsh() { update_zsh && antibody update }
+upgrade_zsh() { $ZDOTDIR/zsh-cfg bundle compile update }
 
 # Finds the package that owns a certain executable
 whose() { /usr/bin/yay --files --owns "/usr/bin/$@" }
