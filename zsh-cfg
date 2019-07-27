@@ -28,5 +28,6 @@ for command; do
     esac
 done
 
+unset files
 unfunction bundle compile
 cd $OLDPWD
