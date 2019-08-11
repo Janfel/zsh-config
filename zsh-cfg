@@ -3,6 +3,15 @@ cd $ZDOTDIR || exit 1
 
 typeset -A files=(init .zshrc env .zshenv profile .zprofile)
 
+function clean() {
+for dir in ${(k)files}; do
+        for bun in $dir/*.bundle(N); do
+            print -u2 "Removed: $bun"
+            rm $bun
+        done
+    done
+}
+
 function bundle() {
     for dir in ${(k)files}; do
         for plug in $dir/*.plug(N); do
@@ -21,6 +30,7 @@ function compile() {
 
 for command; do
     case $command in
+        clean)    clean  ;;
         bundle)   bundle ;;
         compile)  compile ;;
         update)   antibody update ;;
