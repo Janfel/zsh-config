@@ -18,7 +18,7 @@ function bundle() {
 function compile() {
     for dir file in ${(kv)files}; do
         cat $dir/**/*.(zsh|bundle)(N) | rg -v '^\s*(#|$)' > $file
-        zcompile $file
+        zcompile -R $file
         print -u2 "Created: $file"
     done
 }
