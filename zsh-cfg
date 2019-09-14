@@ -2,6 +2,7 @@
 cd $ZDOTDIR || exit 1
 
 typeset -A files=(init .zshrc env .zshenv profile .zprofile)
+help_message='Subcommands: clean bundle compile update'
 
 function clean() {
 for dir in ${(k)files}; do
@@ -28,16 +29,17 @@ function compile() {
     done
 }
 
+(($# == 0)) && echo $help_message
 for command; do
     case $command in
         clean)    clean  ;;
         bundle)   bundle ;;
         compile)  compile ;;
         update)   antibody update ;;
-        *)        echo 'Subcommands: compile  bundle' ;;
+        *)        echo $help_message ;;
     esac
 done
 
-unset files
+unset files help_message
 unfunction bundle compile
 cd $OLDPWD
