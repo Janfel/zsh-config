@@ -5,17 +5,21 @@ typeset -A files=(init .zshrc env .zshenv profile .zprofile)
 help_message='Subcommands: clean bundle compile update'
 
 function clean() {
-for dir in ${(k)files}; do
-        for bun in $dir/*.bundle(N); do
-            print -u2 "Removed: $bun"
+    for dir in ${(k)files}; do
+        for f in .*.zwc(N); do
+            rm -f$f
+            print -u2 "Removed: $f"
+        done
+        for bun in $dir/**/*.bundle(N); do
             rm $bun
+            print -u2 "Removed: $bun"
         done
     done
 }
 
 function bundle() {
     for dir in ${(k)files}; do
-        for plug in $dir/*.plug(N); do
+        for plug in $dir/**/*.plug(N); do
             antibody bundle < $plug > $plug.bundle
             print -u2 "Created: $plug.bundle"
         done
@@ -24,7 +28,8 @@ function bundle() {
 
 function compile() {
     for dir file in ${(kv)files}; do
-        cat $dir/*.(zsh|bundle)(N) | rg -v '^\s*(#|$)' > $file
+        cat $dir/**/*.(zsh|bundle)(N) | rg -v '^\s*(#|$)' > $file
+        zcompile $file
         print -u2 "Created: $file"
     done
 }
