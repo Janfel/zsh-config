@@ -1,3 +1,4 @@
+# Old 1
 setopt autocd
 setopt extendedglob
 setopt interactivecomments

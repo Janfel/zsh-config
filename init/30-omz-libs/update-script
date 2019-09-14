@@ -1,0 +1,14 @@
+dir=${0%/*}
+sources=(
+    completion
+    directories
+    history
+    key-bindings
+)
+
+rm dir/*.dl.zsh(N)
+for src in $sources; do
+    wget -qO "$dir/$src.dl.zsh" 'https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/'$src'.zsh'
+done
+
+unset dir sources

@@ -1,3 +1,4 @@
+# Already provided by zsh-completions
 _doit()
 {
     local cur prev words cword basetask sub_cmds tasks i dodof

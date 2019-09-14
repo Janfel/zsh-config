@@ -23,13 +23,21 @@ function compile() {
     done
 }
 
+function update() {
+    antibody update >&2
+    for script in ${~${(k)files}/%/'/**/update-script(N)'}; do
+        print -u2 "Sourcing: $script"
+        source $script
+    done
+}
+
 (($# == 0)) && echo $help_message
 for command; do
     case $command in
         clean)    clean  ;;
         bundle)   bundle ;;
         compile)  compile ;;
-        update)   antibody update >&2 ;;
+        update)   update ;;
         *)        echo $help_message ;;
     esac
 done
