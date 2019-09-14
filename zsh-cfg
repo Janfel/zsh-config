@@ -5,11 +5,11 @@ typeset -A files=(init .zshrc env .zshenv profile .zprofile)
 help_message='Subcommands: clean bundle compile update'
 
 function clean() {
-    rm -f .*.zwc ${(k)files}/**/.bundle(N)
+    rm -v .*.zwc(N) ${~${(k)files}/%/'/**/*.bundle(N)'} >&2
 }
 
 function bundle() {
-    for plug in ${(k)files}/**/*.plug(N); do
+    for plug in ${~${(k)files}/%/'/**/*.plug(N)'}; do
         antibody bundle < $plug > $plug.bundle
         print -u2 "Created: $plug.bundle"
     done
@@ -29,7 +29,7 @@ for command; do
         clean)    clean  ;;
         bundle)   bundle ;;
         compile)  compile ;;
-        update)   antibody update ;;
+        update)   antibody update >&2 ;;
         *)        echo $help_message ;;
     esac
 done
