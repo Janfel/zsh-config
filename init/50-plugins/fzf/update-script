@@ -1,0 +1,4 @@
+cd ${0%/*} || exit 1
+rm -v *.zsh(N)
+cp -t . /usr/share/fzf/*.zsh
+cd $OLDPWD
