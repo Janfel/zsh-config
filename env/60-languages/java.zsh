@@ -9,6 +9,7 @@ java_options=(
    '-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
    '-Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
    '-Dsun.java2d.opengl=true'
+   '-Djdk.gtk.version=3'
    $java_options
 )
 
