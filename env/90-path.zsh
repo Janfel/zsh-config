@@ -2,7 +2,6 @@ typeset -U PATH path
 path=(
     ~/.local/bin
     $path
-    $XDG_CONFIG_HOME/emacs/doom/bin
     ${(s.:.)"$(luarocks path --lr-bin)"}
     ~/.cabal/bin
     ~/.stack/bin
