@@ -1,2 +1,2 @@
-typeset -xT GOPATH gopath
-gopath=($HOME/Code/Go)
+typeset -xUT GOPATH gopath
+gopath=($HOME/Code/Go $gopath)
