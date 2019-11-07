@@ -82,6 +82,9 @@
       # example               # example user-defined segment (see prompt_example function below)
   )
 
+  # Make the prompt only appear on the current line. Values are 'always' and 'same-dir'.
+  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
+
   # Basic style options that define the overall look of your prompt. You probably don't want to
   # change them.
   typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background
@@ -151,7 +154,7 @@
   typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=true
 
   # Add an empty line before each prompt.
-  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
 
   # Ruler, a.k.a. the horizontal line before each prompt. If you set it to true, you'll
   # probably want to set POWERLEVEL9K_PROMPT_ADD_NEWLINE=false above and
