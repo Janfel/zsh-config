@@ -15,5 +15,5 @@ path=(
     $GOPATH/bin
     #$((( $+commands[yarn] )) && yarn global bin || echo $XDG_DATA_HOME/yarn/bin)
     $XDG_DATA_HOME/yarn/bin
-    $NPM_CONFIG_PREFIX
+    $NPM_CONFIG_PREFIX/bin
 )
