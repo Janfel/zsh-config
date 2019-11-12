@@ -9,9 +9,11 @@ path=(
     ~/.stack/bin
     ~/.ghcup/bin
     $CARGO_HOME/bin
-    $((($+commands[ruby] )) && ruby -e 'puts Gem.user_dir')/bin
+    $((( $+commands[ruby] )) && ruby -e 'puts Gem.user_dir')/bin
     $PERL_BASE/bin
     $PYTHONUSERBASE/bin
     $GOPATH/bin
-    $((( $+commands[yarn] )) && yarn global bin || echo $XDG_DATA_HOME/yarn/bin)
+    #$((( $+commands[yarn] )) && yarn global bin || echo $XDG_DATA_HOME/yarn/bin)
+    $XDG_DATA_HOME/yarn/bin
+    $NPM_CONFIG_PREFIX
 )
