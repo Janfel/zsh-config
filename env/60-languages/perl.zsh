@@ -1,3 +1,16 @@
+# See man perlrun lines 220 and 1090
+export PERL_UNICODE=SDA
+export PERL_CPANM_HOME="$XDG_DATA_HOME/cpanminus"
+
+typeset -xUT PERL5OPT perl5opt ' '
+perl5opt=(
+    '-Mutf8'
+    '-Mfeature=unicode_strings'
+    $perl5opt
+)
+
+#typeset -xUT CPAN_OPTS cpan_opts ' '
+#typeset -xUT CPANM_OPTS cpan_opts ' '
 
 # Package management
 
