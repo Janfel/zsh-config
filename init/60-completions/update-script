@@ -1,0 +1,6 @@
+cd ${0%/*} || exit 1
+
+rm -v pip.zsh
+pip completion --zsh > pip.zsh
+
+cd $OLDPWD
