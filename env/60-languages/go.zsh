@@ -1,2 +1,2 @@
 typeset -xUT GOPATH gopath
-gopath=($HOME/Code/Go $gopath)
+gopath=($HOME/Code/GoTree $gopath)
