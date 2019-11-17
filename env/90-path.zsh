@@ -10,6 +10,7 @@ path=(
     ~/.ghcup/bin
     $CARGO_HOME/bin
     $((( $+commands[ruby] )) && ruby -e 'puts Gem.user_dir')/bin
+    $_DOTNET_TOOLPATH
     $PERL_BASE/bin
     $PYTHONUSERBASE/bin
     $gopath/bin
