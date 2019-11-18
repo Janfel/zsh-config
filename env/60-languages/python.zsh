@@ -7,3 +7,6 @@ export PYTHONUSERBASE="$XDG_USER_BASE"
 # Pylint
 export PYLINTHOME="$XDG_CACHE_HOME/pylint"
 export PYLINTRC="$XDG_CONFIG_HOME/python/pylint.conf"
+
+# mypy
+export MYPY_CACHE_DIR="$XDG_CACHE_HOME/mypy"
