@@ -1,3 +1,5 @@
+export _ARCH_DISABLE_PREPEND_LOCAL_BIN=1
+
 typeset -U PATH path
 path=(
     ~/bin
@@ -6,7 +8,8 @@ path=(
     $LUAROCKS_HOME_TREE/bin
     #${(s.:.)"$(luarocks path --lr-bin)"}
     ~/.cabal/bin
-    ~/.stack/bin
+    #~/.stack/bin
+    $STACK_ROOT/bin
     ~/.ghcup/bin
     $CARGO_HOME/bin
     $((( $+commands[ruby] )) && ruby -e 'puts Gem.user_dir')/bin
