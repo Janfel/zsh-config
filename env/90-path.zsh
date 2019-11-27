@@ -1,4 +1,4 @@
-export _ARCH_DISABLE_PREPEND_LOCAL_BIN=1
+# PATH config
 
 typeset -U PATH path
 path=(
