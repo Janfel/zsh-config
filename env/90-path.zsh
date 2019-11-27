@@ -1,9 +1,7 @@
 # PATH config
 
-typeset -U PATH path
-path=(
-    ~/bin
-    $path
+# gets typeset in 10-defaults
+path+=(
     $XDG_USER_BASE/bin
     $LUAROCKS_HOME_TREE/bin
     #${(s.:.)"$(luarocks path --lr-bin)"}
