@@ -1,5 +1,5 @@
 alias -g L='| less'
 alias -g S='| sort'
 alias -g U='| uniq'
-alias -g SU='| sort | uniq'
+alias -g SU='| sort -u'
 alias -g T='| tee /dev/stderr'
