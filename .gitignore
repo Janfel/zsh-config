@@ -4,3 +4,6 @@
 # Zsh files
 /.z*
 *.dl.zsh
+
+# Backup dir
+/bak/
