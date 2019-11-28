@@ -1,9 +1,5 @@
-# PATH config
-
-# gets typeset in 10-defaults
 path+=(
-    $XDG_USER_BASE/bin
-    $LUAROCKS_HOME_TREE/bin
+    #$LUAROCKS_HOME_TREE/bin
     #${(s.:.)"$(luarocks path --lr-bin)"}
     ~/.cabal/bin
     #~/.stack/bin
@@ -14,7 +10,7 @@ path+=(
     $_DOTNET_TOOLPATH
     $PERL_BASE/bin
     $PYTHONUSERBASE/bin
-    $gopath/bin
+    ${^gopath}/bin
     #$((( $+commands[yarn] )) && yarn global bin || echo $XDG_DATA_HOME/yarn/bin)
     #$XDG_DATA_HOME/yarn/bin
     $NPM_CONFIG_PREFIX/bin

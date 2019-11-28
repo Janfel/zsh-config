@@ -1,0 +1,1 @@
+setopt RC_EXPAND_PARAM
