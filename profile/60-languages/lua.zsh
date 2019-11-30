@@ -37,3 +37,7 @@ lua_cpath=$lua_cpath_5_3
 #if (( $+commands[luarocks] )) {
 #    eval $(luarocks path --no-bin 2> /dev/null)
 #}
+#path+=(
+    #$LUAROCKS_HOME_TREE/bin
+    #${(s.:.)"$(luarocks path --lr-bin)"}
+#)

@@ -16,3 +16,5 @@ perl5lib=($PERL_BASE $perl5lib)
 perl_local_lib_root=($PERL_BASE $perl_local_lib_root)
 perl_mb_opt+="--install_base '$PERL_BASE'"
 perl_mm_opt+="INSTALL_BASE='$PERL_BASE'"
+
+#path+=$PERL_BASE/bin
