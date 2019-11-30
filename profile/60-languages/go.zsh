@@ -1,2 +1,2 @@
-gopath=($HOME/Code/GoTree $gopath)
+gopath=($HOME/var/go $gopath)
 path+=(${^gopath}/bin)
