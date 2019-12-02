@@ -11,5 +11,19 @@ upgrade_zsh() { $ZDOTDIR/zsh-cfg bundle compile update }
 whose() { /usr/bin/yay --query --owns "/usr/bin/$@" }
 
 # Converts to Upper/Lowercase (unicode aware)
-upcase() { /usr/bin/sed 's/.*/\U&/g' }
-downcase() { /usr/bin/sed 's/.*/\L&/g' }
+upcase() {
+    _upcase() { /usr/bin/sed 's/.*/\U&/g' }
+    if (( $# )); then
+        print -l "$@" | _upcase
+    else
+        _upcase
+    fi
+}
+downcase() {
+    _downcase() { /usr/bin/sed 's/.*/\L&/g' }
+    if (( $# )); then
+        print -l "$@" | _downcase
+    else
+        _downcase
+    fi
+}
