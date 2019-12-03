@@ -1,10 +1,12 @@
 export CHICKEN_INSTALL_REPOSITORY="$XDG_USER_BASE/lib/chicken/5"
 chicken_repository_path=(
-    $chicken_repository_path
-    /usr/lib/chicken/*(NF)
     $CHICKEN_INSTALL_REPOSITORY
 )
-export CHICKEN_REPOSITORY_PATH="$XDG_USER_BASE/lib/chicken/5"
+chicken_include_path=(
+    /usr/lib/chicken/*(NF)
+    $chicken_repository_path
+)
+
 export GUILE_HISTORY="$RLWRAP_HOME/guile_history"
 
 #export GUILE_BASE="$XDG_USER_BASE"
