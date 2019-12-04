@@ -25,8 +25,8 @@ git clone 'https://github.com/Janfel/zsh-config.git' ~/.config/zsh
 3. Point Zsh to your new config folder (if there are multiple users on your system use symlinks instead)
    **WARNING** This will change the Zsh config directory for **all** users!
 
-```sh
-echo 'export ZDOTDIR=$HOME/.config/zsh' | sudo tee -a /etc/zsh/zshenv
+```bash
+sudo tee -a /etc/zsh/zshenv <<<'export ZDOTDIR=$HOME/.config/zsh'
 ```
 
 ## Configuration
