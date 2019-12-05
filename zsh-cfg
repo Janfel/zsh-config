@@ -3,13 +3,22 @@ cd $ZDOTDIR || exit 1
 
 typeset -A files=(init .zshrc env .zshenv profile .zprofile)
 help_message='Subcommands: clean bundle compile update'
+awk_program='
+!/^\s*(#|$)/ {
+    if (FILENAME ~ /\.zshx$/) {
+        print FILENAME | "/bin/sh";
+        nextfile;
+    } else {
+        print;
+    }
+}'
 
 function clean() {
     rm -fv .*.zwc(N) ${~${(k)files}/%/'/**/*.bundle(N)'} >&2 2>/dev/null
 }
 
 function bundle() {
-    for plug in ${~${(k)files}/%/'/**/*.plug(N)'}; do
+    for plug in ${~${(k)files}/%/'/**/*.plug(Nr)'}; do
         antibody bundle < $plug > $plug.bundle
         print -u2 "Created: $plug.bundle"
     done
@@ -17,7 +26,8 @@ function bundle() {
 
 function compile() {
     for dir file in ${(kv)files}; do
-        cat $dir/**/*.(zsh|bundle)(N) | rg -v '^\s*(#|$)' > $file
+        chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
+        awk $awk_program $dir/**/*.(zsh|zshx|bundle)(Nr) > $file
         zcompile -UR $file
         print -u2 "Created: $file"
     done
@@ -25,7 +35,7 @@ function compile() {
 
 function update() {
     antibody update >&2
-    for script in ${~${(k)files}/%/'/**/update-script(N)'}; do
+    for script in ${~${(k)files}/%/'/**/update-script(Nr)'}; do
         print -u2 "Sourcing: $script"
         source $script
     done
