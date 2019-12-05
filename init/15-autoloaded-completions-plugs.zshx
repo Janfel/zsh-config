@@ -1,0 +1,2 @@
+#!/usr/bin/env -S sh -c 'antibody bundle <"$0"'
+#zsh-users/zsh-completions

@@ -1,3 +1,4 @@
+#!/usr/bin/env -S sh -c 'antibody bundle <"$0"'
 # Must be last
 
 # Highlighting BEFORE substring search but AFTER everything else

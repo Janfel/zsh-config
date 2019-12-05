@@ -2,7 +2,7 @@
 cd $ZDOTDIR || exit 1
 
 typeset -A files=(init .zshrc env .zshenv profile .zprofile)
-help_message='Subcommands: clean bundle compile update'
+help_message='Subcommands: clean compile update'
 awk_program='
 !/^\s*(#|$)/ {
     if (FILENAME ~ /\.zshx$/) {
@@ -15,13 +15,6 @@ awk_program='
 
 function clean() {
     rm -fv .*.zwc(N) ${~${(k)files}/%/'/**/*.bundle(N)'} >&2 2>/dev/null
-}
-
-function bundle() {
-    for plug in ${~${(k)files}/%/'/**/*.plug(Nr)'}; do
-        antibody bundle < $plug > $plug.bundle
-        print -u2 "Created: $plug.bundle"
-    done
 }
 
 function compile() {
@@ -45,7 +38,6 @@ function update() {
 for command; do
     case $command in
         clean)    clean  ;;
-        bundle)   bundle ;;
         compile)  compile ;;
         update)   update ;;
         *)        echo $help_message ;;
