@@ -2,21 +2,21 @@
 cd $ZDOTDIR || exit 1
 
 typeset -A files=(init .zshrc env .zshenv profile .zprofile)
-awk_program='
-!/^\s*(#|$)/ {
-    if (FILENAME ~ /\.zshx$/) {
-        system(FILENAME);
-        nextfile;
-    } else {
-        print;
-    }
-}'
 
 clean () {
     rm -fv .*.zwc(N) ${~${(k)files}/%/'/**/*.bundle(N)'} >&2 2>/dev/null
 }
 
 compile () {
+    awk_program='
+    !/^\s*(#|$)/ {
+        if (FILENAME ~ /\.zshx$/) {
+            system(FILENAME);
+            nextfile;
+        }
+        print;
+    }'
+
     for dir file in ${(kv)files}; do
         chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
         awk $awk_program $dir/**/*.(zsh|zshx|bundle)(Nr) > $file
@@ -41,9 +41,9 @@ print_help () {
 (( $# )) || print_help
 for command; do
     case $command in
-        clean)    clean      ;;
-        compile)  compile    ;;
-        update)   update     ;;
-        *)        print_help ;;
+    clean)   clean      ;;
+    compile) compile    ;;
+    update)  update     ;;
+    *)       print_help ;;
     esac
 done
