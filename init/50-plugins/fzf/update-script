@@ -1,4 +1,5 @@
 cd ${0%/*} || exit 1
 rm -v *.zsh(N)
 cp -t . /usr/share/fzf/*.zsh
+rename '.zsh' '.dl.zsh' /usr/share/fzf/*.zsh(:t)
 cd $OLDPWD
