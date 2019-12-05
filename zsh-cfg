@@ -2,7 +2,6 @@
 cd $ZDOTDIR || exit 1
 
 typeset -A files=(init .zshrc env .zshenv profile .zprofile)
-help_message='Subcommands: clean compile update'
 awk_program='
 !/^\s*(#|$)/ {
     if (FILENAME ~ /\.zshx$/) {
@@ -13,11 +12,11 @@ awk_program='
     }
 }'
 
-function clean() {
+clean () {
     rm -fv .*.zwc(N) ${~${(k)files}/%/'/**/*.bundle(N)'} >&2 2>/dev/null
 }
 
-function compile() {
+compile () {
     for dir file in ${(kv)files}; do
         chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
         awk $awk_program $dir/**/*.(zsh|zshx|bundle)(Nr) > $file
@@ -26,7 +25,7 @@ function compile() {
     done
 }
 
-function update() {
+update () {
     antibody update >&2
     for script in ${~${(k)files}/%/'/**/update-script(Nr)'}; do
         print -u2 "Sourcing: $script"
@@ -34,12 +33,17 @@ function update() {
     done
 }
 
-(($# == 0)) && echo $help_message
+print_help () {
+    help_message='Subcommands: clean compile update'
+    echo $help_message
+}
+
+(( $# )) || print_help
 for command; do
     case $command in
-        clean)    clean  ;;
-        compile)  compile ;;
-        update)   update ;;
-        *)        echo $help_message ;;
+        clean)    clean      ;;
+        compile)  compile    ;;
+        update)   update     ;;
+        *)        print_help ;;
     esac
 done
