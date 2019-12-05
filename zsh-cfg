@@ -6,7 +6,7 @@ help_message='Subcommands: clean bundle compile update'
 awk_program='
 !/^\s*(#|$)/ {
     if (FILENAME ~ /\.zshx$/) {
-        print FILENAME | "/bin/sh";
+        system(FILENAME);
         nextfile;
     } else {
         print;
