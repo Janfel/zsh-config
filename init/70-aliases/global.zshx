@@ -1,0 +1,54 @@
+#!/usr/bin/zsh
+# Global ZSH aliases
+vals=(
+    
+# sort uniq
+    B  '| bat'
+    BL '| bat -l'
+
+    T  '| tee'
+    TE '| tee /dev/stderr'
+
+    S  '| sort'
+    U  '| uniq'
+    SU '| sort -u'
+
+    C  '| wc -l'
+    F  '| fmt - '
+    L  '| less'
+    X  '| xargs'
+
+# silence output
+    Q   '>/dev/null'
+    QE '2>/dev/null'
+    QA  '>/dev/null 2>&1'
+
+# head and tail
+    H    '| head'
+    HL   '| head -n 20'
+    HLL  '| head -n 50'
+    HLLL '| head -n 100'
+
+    T    '| tail -n 10'
+    TL   '| tail -n 20'
+    TLL  '| tail -n 50'
+    TLLL '| tail -n 100'
+
+# devices
+    DI '/dev/stdin'
+    DO '/dev/stdout'
+    DE '/dev/stderr'
+    DN '/dev/null'
+    DZ '/dev/zero'
+    DR '/dev/urandom'
+
+# directories
+    '...'     '../..'
+    '....'    '../../..'
+    '.....'   '../../../..'
+    '......'  '../../../../..'
+)
+
+for k v in $vals ; do
+    printf "alias -g '%s'='%s'\\n" $k $v
+done
