@@ -6,7 +6,6 @@
 
 - Zsh (obviously)
 - The [antibody](https://getantibody.github.io/) plugin manager
-- [ripgrep](https://github.com/BurntSushi/ripgrep) (optional)
 
 ## Installation
 
@@ -16,14 +15,15 @@
 git clone 'https://github.com/Janfel/zsh-config.git' ~/.config/zsh
 ```
 
-2. Compile the config files and update the plugins
+1. Compile the config files and update the plugins
 
 ```sh
 ~/.config/zsh/zsh-cfg bundle compile update
 ```
 
-3. Point Zsh to your new config folder (if there are multiple users on your system use symlinks instead)
-   **WARNING** This will change the Zsh config directory for **all** users!
+1. Point Zsh to your new config folder (if there are multiple users on your
+   system use symlinks instead) **WARNING** This will change the Zsh config
+   directory for **all** users!
 
 ```bash
 sudo tee -a /etc/zsh/zshenv <<<'export ZDOTDIR=$HOME/.config/zsh'
@@ -32,13 +32,13 @@ sudo tee -a /etc/zsh/zshenv <<<'export ZDOTDIR=$HOME/.config/zsh'
 ## Configuration
 
 Change `~/.config/zsh/zsh-cfg` as you wish.
-If you do not have `ripgrep` installed, replace the command `rg` with `grep`.
 
 ## Usage
 
 ### Changing the config
 
 Just put your configuration script in a \*.zsh file under the corresponding directory.
+The files are included in lexical order.
 
 - `init` for `.zshrc`
 - `env` for `.zshenv`
@@ -46,15 +46,18 @@ Just put your configuration script in a \*.zsh file under the corresponding dire
 
 ### Adding plugins
 
-Just add an antibody static plugin file with a .plug extension into the corresponding directory.
-Then create a static plugin file with:
-```sh
-~/.config/zsh/zsh-cfg bundle
+Just add it into a `.zshx` file with the following shebang.
+This makes the file work just like one of `antibody`s static plugin files.
+
+``` sh
+#!/usr/bin/env -S sh -c 'antibody bundle <"$0"'
 ```
 
 ### Recompiling
 
-If you have changed files in the config directories, you have to recompile your config files
+If you have changed files in the config directories,
+you have to recompile your config files. Be aware that this
+executes any `.zshx` files in the directories.
 
 ```sh
 ~/.config/zsh/zsh-cfg compile
