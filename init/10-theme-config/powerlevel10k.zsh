@@ -28,7 +28,7 @@
 
   # Unset all configuration options. This allows you to apply configiguration changes without
   # restarting zsh. Edit ~/.p10k.zsh and type `source ~/.p10k.zsh`.
-  unset -m 'POWERLEVEL9K_*'
+  # unset -m 'POWERLEVEL9K_*'
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(

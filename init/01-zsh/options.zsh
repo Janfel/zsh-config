@@ -20,3 +20,12 @@ setopt LOCAL_PATTERNS       # Allow disabled patterns per function
 setopt AUTO_PUSHD           # Push dirs onto dir stack
 setopt PUSHD_IGNORE_DUPS    # Dedupe dir stack
 setopt PUSHD_MINUS          # Make cd -n the n-th to last directory
+
+# history
+setopt EXTENDED_HISTORY       # record timestamp of command in HISTFILE
+setopt HIST_EXPIRE_DUPS_FIRST # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt HIST_IGNORE_DUPS       # ignore duplicated commands history list
+setopt HIST_IGNORE_SPACE      # ignore commands that start with space
+setopt HIST_VERIFY            # show command with history expansion to user before running it
+setopt INC_APPEND_HISTORY     # add commands to HISTFILE in order of execution
+setopt SHARE_HISTORY          # share command history data
