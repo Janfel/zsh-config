@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+# pip
+pip completion --zsh
+
+# antibody
+cat <<'EOF'
+_antibody() {
+    IFS=' ' read -A reply <<< "help bundle update home purge list init"
+}
+compctl -K _antibody antibody
+EOF
