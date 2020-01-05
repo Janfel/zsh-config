@@ -1,22 +1,26 @@
 #!/usr/bin/zsh
 # Global ZSH aliases
 vals=(
-    
-# sort uniq
-    B  '| bat'
-    BL '| bat -l'
 
-    T  '| tee'
-    TE '| tee /dev/stderr'
-
-    S  '| sort'
-    U  '| uniq'
-    SU '| sort -u'
+    LCC 'LC_ALL=C'
 
     C  '| wc -l'
     F  '| fmt - '
-    L  '| less'
     X  '| xargs'
+    
+# paging
+    L  '| less'
+    B  '| bat'
+    BL '| bat -l'
+
+# tee
+    T  '| tee'
+    TE '| tee /dev/stderr'
+
+# sort uniq
+    S  '| sort'
+    U  '| uniq'
+    SU '| sort -u'
 
 # silence output
     Q   '>/dev/null'
