@@ -1,3 +1,3 @@
 # Doom Emacs
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
-path+="$DOOMDIR/bin"
+path+="$XDG_CONFIG_HOME/emacs_doom/bin"
