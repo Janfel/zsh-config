@@ -8,7 +8,7 @@ update_zsh() { $ZDOTDIR/zsh-cfg bundle compile }
 upgrade_zsh() { $ZDOTDIR/zsh-cfg bundle compile update }
 
 # Finds the package that owns a certain executable
-whose() { /usr/bin/yay --query --owns "/usr/bin/$@" }
+whose() { /usr/bin/yay --query --owns $(which $@)}
 
 # Converts to Upper/Lowercase (unicode aware)
 upcase() {
