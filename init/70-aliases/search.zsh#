@@ -1,2 +1,0 @@
-# Made obsolete by fd
-function search() { find . -iname "$*" -print }

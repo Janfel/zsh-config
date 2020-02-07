@@ -1,8 +1,9 @@
-# Placeholder
-#export JAVA_HOME="/usr/lib/jvm/default"
-#export JRE_HOME="/usr/lib/jvm/default-runtime"
+# Java
 
-#export JAVA_FONTS='/usr/share/fonts/TTF'
+export JAVA_HOME='/usr/lib/jvm/default'
+export JRE_HOME='/usr/lib/jvm/default-runtime'
+export JAVA_FONTS='/usr/share/fonts/TTF'
+
 java_options=(
     # Java config root
     "-Djava.util.prefs.userRoot='$XDG_CONFIG_HOME/java'"
@@ -11,7 +12,7 @@ java_options=(
     '-Dawt.useSystemAAFontSettings=on'
     '-Dswing.aatext=true'
 
-    # Default Look-and-Feel
+    # GTK Look-and-Feel
     '-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
     '-Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 

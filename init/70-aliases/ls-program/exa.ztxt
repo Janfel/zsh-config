@@ -1,0 +1,6 @@
+alias l='exa -F'
+alias ll='exa -l'
+alias la='exa -Fa'
+alias lla='exa -la'
+alias lg='exa -l --git'
+alias tree='exa -T'

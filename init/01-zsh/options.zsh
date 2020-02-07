@@ -1,4 +1,4 @@
-# ZSH options
+# Zsh options.
 
 setopt AUTO_CD              # Use cd on directory name
 setopt INTERACTIVE_COMMENTS # Comments in interactive shell

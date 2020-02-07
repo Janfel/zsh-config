@@ -1,13 +1,16 @@
-# Remove alias to man
+# Initialize the Zsh help builtin.
+
+# Remove alias to man.
 unalias run-help 2> /dev/null
 
-# Load help builtin
+# Load help builtin.
 autoload -Uz run-help
 
-# Load extensions
+# Load extensions.
 autoload -Uz run-help-git
 autoload -Uz run-help-ip
 autoload -Uz run-help-openssl
 autoload -Uz run-help-sudo
 
+# Create alias.
 alias help=run-help

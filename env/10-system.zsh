@@ -1,3 +1,5 @@
+# These are important variables that shall be bound before all others.
+
 typeset -xUT PATH path
 
 typeset -xUT XDG_CONFIG_DIRS xdg_config_dirs

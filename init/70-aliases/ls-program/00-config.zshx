@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+LS_PROG=exa
+
+grep -Eshv '^\s*(#|$)' "${0%/*}/$LS_PROG.ztxt"

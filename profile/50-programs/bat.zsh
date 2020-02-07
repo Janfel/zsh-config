@@ -1,2 +1,6 @@
-export BAT_PAGER="less -RF"
-export BAT_THEME="OneHalfDark"
+# Bat
+
+# Pager configuration.
+export BAT_PAGER='less --raw-control-chars --quit-if-one-screen'
+# OneDark theme.
+export BAT_THEME='OneHalfDark'

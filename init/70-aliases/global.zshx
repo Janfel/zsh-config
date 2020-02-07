@@ -1,5 +1,7 @@
 #!/usr/bin/zsh
-# Global ZSH aliases
+
+# Global aliases.
+
 vals=(
 
     LCC 'LC_ALL=C'
@@ -53,6 +55,7 @@ vals=(
     '......'  '../../../../..'
 )
 
+# Print the alias creation code to stdout.
 for k v in $vals ; do
     printf "alias -g '%s'='%s'\\n" $k $v
 done

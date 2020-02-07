@@ -1,1 +1,0 @@
-#typeset -xUT MANPATH manpath
