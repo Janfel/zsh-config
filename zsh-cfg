@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-cd $ZDOTDIR || exit 1
+cd ${ZDOTDIR:-$HOME} || exit 1
 
 typeset -A files=(init .zshrc env .zshenv profile .zprofile)
 
@@ -17,7 +17,7 @@ compile () {
         print;
     }'
 
-    for dir file in ${(kv)files}; do
+    for dir file in ${(kv)files} ; do
         chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
         awk $awk_program $dir/**/*.(zsh|zshx)(Nr) > $file
         zcompile -UR $file
@@ -27,19 +27,18 @@ compile () {
 
 update () {
     antibody update >&2
-    for script in ${~${(k)files}/%/'/**/update-script(Nr)'}; do
+    for script in ${~${(k)files}/%/'/**/update-script(Nr)'} ; do
         print -u2 "Sourcing: $script"
         source $script
     done
 }
 
 print_help () {
-    help_message='Subcommands: clean compile update'
-    echo $help_message
+    echo 'Subcommands: clean compile update'
 }
 
 (( $# )) || print_help
-for command; do
+for command ; do
     case $command in
     clean)   clean      ;;
     compile) compile    ;;
