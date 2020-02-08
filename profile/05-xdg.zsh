@@ -1,5 +1,12 @@
 # Initialize the XDG variables.
 
+# This is a custom variable following the XDG naming scheme.
+# It defines the prefix used for the user-local file system hierarchy.
+export XDG_USER_BASE="$HOME/.local"
+path+=$XDG_USER_BASE/bin
+
+# The XDG variables are defined in terms of $XDG_USER_BASE.
+
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 xdg_config_dirs=(
@@ -13,7 +20,3 @@ xdg_data_dirs=(
     /usr/share
     $xdg_data_dirs
 )
-
-# This is a custom variable following the XDG naming scheme.
-export XDG_USER_BASE="$HOME/.local"
-path+=$XDG_USER_BASE/bin
