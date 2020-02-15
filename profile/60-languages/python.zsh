@@ -5,6 +5,9 @@ export PYTHON_EGG_CACHE="$XDG_CACHE_HOME/python/eggs"
 export PYTHONUSERBASE="$XDG_USER_BASE"
 #path+=$PYTHONUSERBASE/bin
 
+# IPython
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+
 # Pylint
 export PYLINTHOME="$XDG_CACHE_HOME/pylint"
 export PYLINTRC="$XDG_CONFIG_HOME/python/pylint.conf"
