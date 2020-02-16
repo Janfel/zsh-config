@@ -12,7 +12,7 @@ alias du='du -h'
 alias println='print -l'
 
 alias mi=micro
-alias vi=nvim
+alias nv=nvim
 
 alias sh='rlwrap sh'
 
