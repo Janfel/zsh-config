@@ -18,7 +18,7 @@
 [[ ! -o 'no_brace_expand' ]] || p10k_config_opts+=('no_brace_expand')
 'builtin' 'setopt' 'no_aliases' 'no_sh_glob' 'brace_expand'
 
-() {
+function {
   emulate -L zsh
   setopt no_unset extended_glob
   zmodload zsh/langinfo

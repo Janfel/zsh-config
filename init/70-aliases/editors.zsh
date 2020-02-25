@@ -1,11 +1,11 @@
 # Aliases for invoking an editor.
 
-editor() {
+function editor {
     : 'Open a file or files with $EDITOR.'
     ${EDITOR:-nano} $@
 }
 
-visual() {
+function visual {
     : 'Open a file or files with $VISUAL.'
     ${VISUAL:-${$EDITOR:-nano}} $@
 }
@@ -15,12 +15,12 @@ alias v=visual
 
 # Load my editor config when invoked by sudo.
 
-sudoeditor() {
+function sudoeditor {
     : 'Open a file or files with $EDITOR using sudo.'
     sudo -E ${$EDITOR:-nano} $@
 }
 
-sudovisual() {
+function sudovisual {
     : 'Open a file or files with $VISUAL using sudo.'
     sudo -E ${VISUAL:-${$EDITOR:-nano}} $@
 }

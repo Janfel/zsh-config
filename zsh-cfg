@@ -3,11 +3,11 @@ cd ${ZDOTDIR:-$HOME} || exit 1
 
 typeset -A files=(init .zshrc env .zshenv profile .zprofile)
 
-clean () {
+function clean {
     rm -fv .*.zwc(N) ${~${(k)files}/%/'/**/*.bundle(N)'} >&2 2>/dev/null
 }
 
-compile () {
+function compile {
     awk_program='
     !/^\s*(#|$)/ {
         if (FILENAME ~ /\.zshx$/) {
@@ -25,7 +25,7 @@ compile () {
     done
 }
 
-update () {
+function update {
     antibody update >&2
     for script in ${~${(k)files}/%/'/**/update-script(Nr)'} ; do
         print -u2 "Sourcing: $script"
@@ -33,7 +33,7 @@ update () {
     done
 }
 
-print_help () {
+function print_help {
     echo 'Subcommands: clean compile update'
 }
 

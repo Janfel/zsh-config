@@ -10,7 +10,7 @@ pip completion --zsh
 
 # antibody
 cat <<'EOF'
-_antibody() {
+function _antibody {
     IFS=' ' read -A reply <<< "help bundle update home purge list init"
 }
 compctl -K _antibody antibody
