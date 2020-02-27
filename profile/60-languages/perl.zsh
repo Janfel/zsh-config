@@ -23,3 +23,6 @@ perl_mm_opt+="INSTALL_BASE='$PERL_BASE'"
 export PERL_CPANM_HOME="$XDG_DATA_HOME/cpanminus"
 # cpan_opts=()
 # cpanm_opts=()
+
+# Perl::Tidy
+export PERLTIDY="$XDG_CONFIG_HOME/perl/perltidy.conf"
