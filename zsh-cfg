@@ -7,14 +7,14 @@ read -rd '' help_message <<EOF
 Usage: $0 <command>
 
 Commands:
-  clean        Remove all .zwc and .bundle files.
-  compile      Build the Zsh config files by running all .zshx files.
+  clean        Remove the compiled .zwc files.
+  compile      Build the Zsh config files by running the .zshx files.
   update       Update the plugins using antibody and run the update-script files.
 
 EOF
 
 function clean() {
-	rm -fv .*.zwc(N) ${~${(k)files}/%/'/**/*.bundle(N)'} >&2 2>/dev/null
+	rm -fv .*.zwc(N) >&2 2>/dev/null
 }
 
 function compile() {
