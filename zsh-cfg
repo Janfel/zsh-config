@@ -1,48 +1,66 @@
 #!/usr/bin/env zsh
 cd ${ZDOTDIR:-$HOME} || exit 1
 
-typeset -A files=(init .zshrc env .zshenv profile .zprofile)
+local -A files=(init .zshrc env .zshenv profile .zprofile)
+local help_message
+read -rd '' help_message <<EOF
+Usage: $0 <command>
 
-function clean {
-    rm -fv .*.zwc(N) ${~${(k)files}/%/'/**/*.bundle(N)'} >&2 2>/dev/null
+Commands:
+  clean        Remove all .zwc and .bundle files.
+  compile      Build the Zsh config files by running all .zshx files.
+  update       Update the plugins using antibody and run the update-script files.
+
+EOF
+
+function clean() {
+	rm -fv .*.zwc(N) ${~${(k)files}/%/'/**/*.bundle(N)'} >&2 2>/dev/null
 }
 
-function compile {
-    awk_program='
-    !/^\s*(#|$)/ {
-        if (FILENAME ~ /\.zshx$/) {
-            system(FILENAME);
-            nextfile;
-        }
-        print;
-    }'
+function compile() {
+	local awk_program
+	read -rd '' awk_program <<-'EOF'
+	!/^\s*(#|$)/ {
+		if (FILENAME ~ /\.zshx$/) {
+			system(FILENAME);
+			nextfile;
+		}
+		print;
+	}
+	EOF
 
-    for dir file in ${(kv)files} ; do
-        chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
-        awk $awk_program $dir/**/*.(zsh|zshx)(Nr) > $file
-        zcompile -UR $file
-        print -u2 "Created: $file"
-    done
+	for dir file in ${(kv)files}; do
+		chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
+		awk $awk_program $dir/**/*.(zsh|zshx)(Nr) >$file
+		zcompile -UR $file
+		print -u2 "Created: $file"
+	done
 }
 
-function update {
-    antibody update >&2
-    for script in ${~${(k)files}/%/'/**/update-script(Nr)'} ; do
-        print -u2 "Sourcing: $script"
-        source $script
-    done
+function update() {
+	antibody update >&2
+	for script in ${~${(k)files}/%/'/**/update-script(Nr)'}; do
+		print -u2 "Sourcing: $script"
+		source $script
+	done
 }
 
-function print_help {
-    echo 'Subcommands: clean compile update'
-}
+# Print help if no arguments were passed.
+(( $# )) || printf '%s\n' $help_message
 
-(( $# )) || print_help
-for command ; do
-    case $command in
-    clean)   clean      ;;
-    compile) compile    ;;
-    update)  update     ;;
-    *)       print_help ;;
-    esac
+# Check for invalid commands.
+for command; do
+	if [[ $command != (clean|compile|update) ]]; then
+		# Invalid command.
+		printf '%s\n' $help_message
+		exit 0;
+	fi
+done
+
+for command; do
+	case $command in
+	(clean)   clean   ;;
+	(compile) compile ;;
+	(update)  update  ;;
+	esac
 done
