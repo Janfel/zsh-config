@@ -1,61 +1,61 @@
-#!/usr/bin/zsh
+#!/usr/bin/env zsh
 
 # Global aliases.
 
 vals=(
 
-    LCC 'LC_ALL=C'
+	LCC 'LC_ALL=C'
 
-    C  '| wc -l'
-    F  '| fmt - '
-    X  '| xargs'
-    
-# paging
-    L  '| less'
-    B  '| bat'
-    BL '| bat -l'
+	C '| wc -l'
+	F '| fmt - '
+	X '| xargs'
 
-# tee
-    T  '| tee'
-    TE '| tee /dev/stderr'
+	# paging
+	L '| less'
+	B '| bat'
+	BL '| bat -l'
 
-# sort uniq
-    S  '| sort'
-    U  '| uniq'
-    SU '| sort -u'
+	# tee
+	T '| tee'
+	TE '| tee /dev/stderr'
 
-# silence output
-    Q   '>/dev/null'
-    QE '2>/dev/null'
-    QA  '>/dev/null 2>&1'
+	# sort uniq
+	S '| sort'
+	U '| uniq'
+	SU '| sort -u'
 
-# head and tail
-    H    '| head'
-    HL   '| head -n 20'
-    HLL  '| head -n 50'
-    HLLL '| head -n 100'
+	# silence output
+	Q '>/dev/null'
+	QE '2>/dev/null'
+	QA '>/dev/null 2>&1'
 
-    T    '| tail -n 10'
-    TL   '| tail -n 20'
-    TLL  '| tail -n 50'
-    TLLL '| tail -n 100'
+	# head and tail
+	H '| head'
+	HL '| head -n 20'
+	HLL '| head -n 50'
+	HLLL '| head -n 100'
 
-# devices
-    DI '/dev/stdin'
-    DO '/dev/stdout'
-    DE '/dev/stderr'
-    DN '/dev/null'
-    DZ '/dev/zero'
-    DR '/dev/urandom'
+	T '| tail -n 10'
+	TL '| tail -n 20'
+	TLL '| tail -n 50'
+	TLLL '| tail -n 100'
 
-# directories
-    '...'     '../..'
-    '....'    '../../..'
-    '.....'   '../../../..'
-    '......'  '../../../../..'
+	# devices
+	DI '/dev/stdin'
+	DO '/dev/stdout'
+	DE '/dev/stderr'
+	DN '/dev/null'
+	DZ '/dev/zero'
+	DR '/dev/urandom'
+
+	# directories
+	'...' '../..'
+	'....' '../../..'
+	'.....' '../../../..'
+	'......' '../../../../..'
 )
 
 # Print the alias creation code to stdout.
-for k v in $vals ; do
-    printf "alias -g '%s'='%s'\\n" $k $v
+for k v in $vals; do
+	printf "alias -g '%s'='%s'\n" $k $v
 done

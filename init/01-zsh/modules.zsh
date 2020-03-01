@@ -1,4 +1,4 @@
 # Zsh modules.
 
-#autoload -Uz colors && colors # 
-autoload -Uz zcalc             # Commandline calculator
+#autoload -Uz colors && colors
+autoload -Uz zcalc # Commandline calculator

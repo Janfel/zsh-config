@@ -3,4 +3,4 @@
 # Set terminal to output tabs (default).
 stty tabs
 # Set tab width to four.
-(( $+commands[tabs] )) && tabs -4
+tabs -4

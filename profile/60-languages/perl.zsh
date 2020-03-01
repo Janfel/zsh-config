@@ -5,9 +5,9 @@
 export PERL_UNICODE=SDA
 
 perl5opt=(
-    '-Mutf8'
-    '-Mfeature=unicode_strings'
-    $perl5opt
+	'-Mutf8'
+	'-Mfeature=unicode_strings'
+	$perl5opt
 )
 
 # Install packages into ~/.local.

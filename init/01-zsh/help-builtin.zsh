@@ -1,7 +1,7 @@
 # Initialize the Zsh help builtin.
 
 # Remove alias to man.
-unalias run-help 2> /dev/null
+unalias run-help 2>/dev/null
 
 # Load help builtin.
 autoload -Uz run-help

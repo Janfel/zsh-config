@@ -32,11 +32,11 @@ alias 9='cd -9'
 alias md='mkdir -p'
 alias rd=rmdir
 
-function d {
-    if [[ -n $1 ]]; then
-        builtin dirs "$@"
-    else
-        builtin dirs -v | head -10
-    fi
+function d() {
+	if [[ -n $1 ]]; then
+		builtin dirs $@
+	else
+		builtin dirs -v | head -10
+	fi
 }
 compdef _dirs d

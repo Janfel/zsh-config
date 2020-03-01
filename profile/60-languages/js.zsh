@@ -12,15 +12,15 @@ export NPM_CONFIG_PREFIX="$XDG_USER_BASE"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/nodejs/history"
 
 node_path=(
-    '/usr/lib/node_modules'
-    '/usr/local/lib/node_modules'
-    $node_path
-    "$XDG_USER_BASE/lib/node_modules"
-    "$NPM_CONFIG_PREFIX/lib/node_modules"
+	'/usr/lib/node_modules'
+	'/usr/local/lib/node_modules'
+	$node_path
+	"$XDG_USER_BASE/lib/node_modules"
+	"$NPM_CONFIG_PREFIX/lib/node_modules"
 )
 
 #path+=(
-    #$((( $+commands[yarn] )) && yarn global bin || echo $XDG_DATA_HOME/yarn/bin)
-    #$XDG_DATA_HOME/yarn/bin
-    #$NPM_CONFIG_PREFIX/bin
+#	$((( $+commands[yarn] )) && yarn global bin || echo $XDG_DATA_HOME/yarn/bin)
+#	$XDG_DATA_HOME/yarn/bin
+#	$NPM_CONFIG_PREFIX/bin
 #)

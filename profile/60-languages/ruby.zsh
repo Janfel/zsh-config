@@ -5,9 +5,3 @@ export IRBRC="$XDG_CONFIG_HOME/ruby/init.rb"
 
 # Put Gem cache in ~/.cache.
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
-
-# Add Gem bin to PATH. This has to call Ruby,
-# because the directory name is versioned.
-if (( $+commands[ruby] )); then
-    path+=$(ruby -e 'puts Gem.user_dir')/bin
-fi

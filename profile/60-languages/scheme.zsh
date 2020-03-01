@@ -4,11 +4,11 @@
 
 export CHICKEN_INSTALL_REPOSITORY="$XDG_USER_BASE/lib/chicken/5"
 chicken_repository_path=(
-    /usr/lib/chicken/*(NF)
-    $CHICKEN_INSTALL_REPOSITORY
+	/usr/lib/chicken/*(NF)
+	$CHICKEN_INSTALL_REPOSITORY
 )
 chicken_include_path=(
-    $chicken_repository_path
+	$chicken_repository_path
 )
 
 # CHICKEN_C_INCLUDE_PATH
