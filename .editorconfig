@@ -1,0 +1,23 @@
+# .editorconfig
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[zsh-cfg]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+# shfmt
+binary_next_line = true
+
+[*.{zsh,zsh_,zshx}]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+# shfmt
+binary_next_line = true
