@@ -7,7 +7,7 @@ function editor {
 
 function visual {
     : 'Open a file or files with $VISUAL.'
-    ${VISUAL:-${$EDITOR:-nano}} $@
+    ${VISUAL:-${EDITOR:-nano}} $@
 }
 
 alias e=editor
@@ -17,12 +17,12 @@ alias v=visual
 
 function sudoeditor {
     : 'Open a file or files with $EDITOR using sudo.'
-    sudo -E ${$EDITOR:-nano} $@
+    sudo -E ${EDITOR:-nano} $@
 }
 
 function sudovisual {
     : 'Open a file or files with $VISUAL using sudo.'
-    sudo -E ${VISUAL:-${$EDITOR:-nano}} $@
+    sudo -E ${VISUAL:-${EDITOR:-nano}} $@
 }
 
 alias sudoe=sudoeditor
