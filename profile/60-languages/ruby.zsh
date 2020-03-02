@@ -1,5 +1,8 @@
 # Ruby
 
+# Put Ruby into verbose mode.
+export RUBYOPT='-w'
+
 # Change location of IRB init script.
 export IRBRC="$XDG_CONFIG_HOME/ruby/init.rb"
 

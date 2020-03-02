@@ -1,11 +1,3 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env ruby
 
-# We have to have Ruby installed.
-if ((!$+commands[ruby])); then
-	print -u2 'Warning: Ruby is not installed'
-	exit 0
-fi
-
-# Add Gem bin to PATH. This has to call Ruby,
-# because the directory name is versioned.
-printf "path+='%s'\n" $(ruby -e 'puts Gem.user_dir')
+puts %q[path+='%s'] % [Gem.user_dir]
