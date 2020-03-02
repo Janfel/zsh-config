@@ -29,12 +29,13 @@ function compile() {
 	}
 	EOF
 
-	for dir file in ${(kv)files}; do
+	for dir file in ${(kv)files}; do {
 		chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
 		awk $awk_program $dir/**/*.(zsh|zshx)(Nr) >$file
 		zcompile -UR $file
 		print -u2 "Created: $file"
-	done
+	} & done
+	wait
 }
 
 function update() {
