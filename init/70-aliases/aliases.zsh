@@ -7,6 +7,7 @@ alias open=kde-open5
 alias o=kde-open5
 
 alias cp='cp -i'
+alias ls='ls --color=auto'
 alias diff='diff --color=auto'
 alias du='du -h'
 alias println='print -l'
