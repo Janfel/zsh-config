@@ -1,6 +1,6 @@
 # Common environment variables that are used by many programs.
 
-export BROWSER=/usr/bin/firefox-developer-edition
+export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/micro
 export GIT_COMMAND=/usr/bin/git
 export PAGER=/usr/bin/less
