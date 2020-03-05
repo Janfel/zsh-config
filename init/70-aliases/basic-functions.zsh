@@ -5,6 +5,11 @@ function mkcd() {
 	mkdir -p $@ && cd $1
 }
 
+function title() {
+	: 'Set the terminal title.'
+	printf $'\033]0;%s\007' "$*"
+}
+
 function what() {
 	: 'Print the file type of a command.'
 	local arg
