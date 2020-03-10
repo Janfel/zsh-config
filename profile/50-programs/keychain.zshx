@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+# Keychain
+if ((!$+commands[keychain])); then
+	print -u2 "skipping: $0"
+	exit
+fi
+
+echo 'typeset -a keychain_keys'
+cat $ZDOTDIR/local/keychain-keys.zsh
+echo 'eval $(SHELL=/usr/bin/zsh keychain --eval --quiet $keychain_keys)'
+echo 'unset keychain_keys'
