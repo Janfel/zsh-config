@@ -18,5 +18,5 @@ path+=(
 	#~/.stack/bin
 	#$STACK_ROOT/bin
 	#~/.ghcup/bin
-	$(realpath $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin)
+	$(realpath -q $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin)
 )
