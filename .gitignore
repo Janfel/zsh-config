@@ -7,3 +7,6 @@
 
 # Backup dir
 /bak/
+
+# Machine local dir
+/local/
