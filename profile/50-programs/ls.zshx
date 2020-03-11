@@ -1,3 +1,10 @@
 #!/usr/bin/env zsh
 
-dircolors --bourne-shell $DIRCOLORS_CONF
+# Run dircolors to generate the code
+# that sets the LS_COLORS variable.
+
+if [[ -r $DIRCOLORS_CONF ]]; then
+	dircolors --bourne-shell $DIRCOLORS_CONF
+else
+	dircolors --bourne-shell
+fi
