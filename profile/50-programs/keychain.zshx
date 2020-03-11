@@ -1,11 +1,19 @@
 #!/usr/bin/env zsh
 # Keychain
 if ((!$+commands[keychain])); then
-	print -u2 "skipping: $0"
-	exit
+	print -u2 "skipping $0: command not found: keychain"
+	exit 1
+fi
+
+# HACK: Make this more dynamic.
+local_file=$ZDOTDIR/local/keychain-keys.zsh
+
+if [[ ! -r $local_file ]]; then
+	print -u2 "skipping $0: file not readable: $local_file"
+	exit 1
 fi
 
 echo 'typeset -a keychain_keys'
-cat $ZDOTDIR/local/keychain-keys.zsh
+cat $local_file
 echo 'eval $(SHELL=/usr/bin/zsh keychain --eval --quiet $keychain_keys)'
 echo 'unset keychain_keys'
