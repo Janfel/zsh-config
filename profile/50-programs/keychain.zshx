@@ -14,6 +14,6 @@ if [[ ! -r $local_file ]]; then
 fi
 
 echo 'typeset -a keychain_keys'
-cat $local_file
+grep -Eshv '^\s*(#|$)' $local_file
 echo 'eval $(SHELL=/usr/bin/zsh keychain --eval --quiet $keychain_keys)'
 echo 'unset keychain_keys'
