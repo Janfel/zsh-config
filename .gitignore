@@ -9,4 +9,5 @@
 /bak/
 
 # Machine local dir
-/local/
+/local/*
+!/local/README*
