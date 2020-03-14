@@ -17,6 +17,8 @@ alias nv=nvim
 
 alias sh='rlwrap sh'
 
+alias whose='pacman --query --owns'
+
 # Directory aliases.
 # Sourced from OMZ's lib/dirs.zsh.
 

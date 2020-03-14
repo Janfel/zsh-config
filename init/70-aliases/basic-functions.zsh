@@ -25,11 +25,6 @@ function what() {
 	file $args
 }
 
-function whose() {
-	: 'Show the package that a command belongs to.'
-	pacman --query --owns $@
-}
-
 function upcase() {
 	: 'Convert a string to uppercase using sed.
 	This function is Unicode aware.
