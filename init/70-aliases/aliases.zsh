@@ -12,9 +12,6 @@ alias diff='diff --color=auto'
 alias du='du -h'
 alias println='print -l'
 
-alias mi=micro
-alias nv=nvim
-
 alias sh='rlwrap sh'
 
 alias whose='pacman --query --owns'
