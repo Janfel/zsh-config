@@ -25,9 +25,9 @@ vals=(
 	SU '| sort -u'
 
 	# silence output
-	Q '>/dev/null'
+	QO  '>/dev/null'
 	QE '2>/dev/null'
-	QA '>/dev/null 2>&1'
+	QA  '>/dev/null 2>&1'
 
 	# head and tail
 	H '| head'
