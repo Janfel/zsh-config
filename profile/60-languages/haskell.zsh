@@ -1,7 +1,7 @@
 # Haskell
 
 # Where GHCUP install GHC.
-export GHCUP_INSTALL_BASE_PREFIX="$HOME/opt/ghcup"
+export GHCUP_INSTALL_BASE_PREFIX="$XDG_USER_OPT/ghcup"
 
 # Cabal
 export CABAL_DIR="$XDG_DATA_HOME/cabal" # Not documented as of 2020-02-15.

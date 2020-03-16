@@ -5,6 +5,12 @@
 export XDG_USER_BASE="$HOME/.local"
 path+=$XDG_USER_BASE/bin
 
+case $HOST in
+PhantomJFL) XDG_USER_OPT="$HOME/opt"       ;;
+TeslaJFL|*) XDG_USER_OPT="$HOME/Programme" ;;
+esac
+export XDG_USER_OPT
+
 # The XDG variables are defined in terms of $XDG_USER_BASE.
 
 export XDG_CACHE_HOME="$HOME/.cache"
