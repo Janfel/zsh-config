@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+case $HOST in
+PhantomJFL) print 'export XDG_USER_OPT="$HOME/opt"'       ;;
+TeslaJFL|*) print 'export XDG_USER_OPT="$HOME/Programme"' ;;
+esac
