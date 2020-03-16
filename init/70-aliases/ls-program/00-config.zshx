@@ -1,5 +1,11 @@
 #!/usr/bin/env zsh
 
-LS_PROG=exa
+ls_prog='ls'
 
-grep -Eshv '^\s*(#|$)' "${0%/*}/$LS_PROG.ztxt"
+if   (($+commands[exa])); then
+	ls_prog='exa'
+elif (($+commands[lsd])); then
+	ls_prog='lsd'
+fi
+
+grep -Eshv '^\s*(#|$)' "${0%/*}/$ls_prog.ztxt"
