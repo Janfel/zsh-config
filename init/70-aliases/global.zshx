@@ -11,17 +11,17 @@ vals=(
 	X '| xargs'
 
 	# paging
-	L '| less'
-	B '| bat'
+	L  '| less'
+	B  '| bat'
 	BL '| bat -l'
 
 	# tee
-	T '| tee'
+	T  '| tee'
 	TE '| tee /dev/stderr'
 
 	# sort uniq
-	S '| sort'
-	U '| uniq'
+	S  '| sort'
+	U  '| uniq'
 	SU '| sort -u'
 
 	# silence output
@@ -30,14 +30,14 @@ vals=(
 	QA  '>/dev/null 2>&1'
 
 	# head and tail
-	H '| head'
-	HL '| head -n 20'
-	HLL '| head -n 50'
+	H    '| head'
+	HL   '| head -n 20'
+	HLL  '| head -n 50'
 	HLLL '| head -n 100'
 
-	T '| tail -n 10'
-	TL '| tail -n 20'
-	TLL '| tail -n 50'
+	T    '| tail -n 10'
+	TL   '| tail -n 20'
+	TLL  '| tail -n 50'
 	TLLL '| tail -n 100'
 
 	# devices
@@ -49,13 +49,11 @@ vals=(
 	DR '/dev/urandom'
 
 	# directories
-	'...' '../..'
-	'....' '../../..'
-	'.....' '../../../..'
+	'...'    '../..'
+	'....'   '../../..'
+	'.....'  '../../../..'
 	'......' '../../../../..'
 )
 
 # Print the alias creation code to stdout.
-for k v in $vals; do
-	printf "alias -g '%s'='%s'\n" $k $v
-done
+printf "alias -g %s=%s\n" ${(qqkv)vals}
