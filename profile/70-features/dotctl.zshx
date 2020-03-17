@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-# dotctl
-
-printf 'export DOTFILES_REPO='
-
-case $HOST in
-PhantomJFL) echo '"$HOME/var/dotfiles"'      ;;
-TeslaJFL|*) echo '"$XDG_DATA_HOME/dotfiles"' ;;
-esac
