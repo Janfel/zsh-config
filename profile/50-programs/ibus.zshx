@@ -1,8 +1,0 @@
-#!/usr/bin/env zsh
-# ibus
-
-(($+commands[ibus])) || exit
-
-print 'export GTK_IM_MODULE=ibus'
-print 'export XMODIFIERS=@im=ibus'
-print 'export QT_IM_MODULE=ibus'
