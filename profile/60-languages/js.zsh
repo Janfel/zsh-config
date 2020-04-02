@@ -19,6 +19,9 @@ node_path=(
 	"$NPM_CONFIG_PREFIX/lib/node_modules"
 )
 
+# Node version manager.
+export NVM_DIR="$XDG_DATA_HOME/nvm"
+
 #path+=(
 #	$((( $+commands[yarn] )) && yarn global bin || echo $XDG_DATA_HOME/yarn/bin)
 #	$XDG_DATA_HOME/yarn/bin
