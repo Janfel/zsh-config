@@ -13,7 +13,7 @@ if [[ ! -r $local_file ]]; then
 fi
 
 echo 'local keychain_keys=('
-printf '%s\n' ${(qqps.\n.)"$(grep -Eshv '^\s*(#|$)' $local_file)"}
+printf '%s\n' ${(qqf)"$(grep -Eshv '^\s*(#|$)' $local_file)"}
 echo ')'
 echo 'eval $(SHELL=/usr/bin/zsh keychain --eval --quiet $keychain_keys)'
 echo 'unset keychain_keys'
