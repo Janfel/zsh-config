@@ -54,7 +54,13 @@ function lines() {
 		print -u2 "$0: not enough arguments"
 		return 1
 	fi
-	local start=$1
-	local end=$2
-	sed -n "${start:-1},${end:-\$}p" $@[3,-1]
+	sed -n "${1:-1},${2:-\$}p" $@[3,-1]
+}
+
+function linediff() {
+	if [[ $# < 5 ]]; then
+		print -u2 "$0: not enough arguments"
+		return 1
+	fi
+	diff <(sed -n "${1},${2}p" $5) <(sed -n "${3},${4}p" ${6:-$5})
 }
