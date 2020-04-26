@@ -48,3 +48,13 @@ function downcase() {
 		downcase_
 	fi
 }
+
+function lines() {
+	if [[ $# < 2 ]]; then
+		print -u2 "$0: not enough arguments"
+		return 1
+	fi
+	local start=$1
+	local end=$2
+	sed -n "${start:-1},${end:-\$}p" $@[3,-1]
+}
