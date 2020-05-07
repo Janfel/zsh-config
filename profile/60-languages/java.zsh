@@ -6,7 +6,7 @@ export JAVA_FONTS='/usr/share/fonts/TTF'
 
 java_options=(
 	# Java config root
-	"-Djava.util.prefs.userRoot='$XDG_CONFIG_HOME/java'"
+	# "-Djava.util.prefs.userRoot='$XDG_CONFIG_HOME/java'"
 
 	# Anti-Aliasing
 	'-Dawt.useSystemAAFontSettings=on'
