@@ -15,5 +15,14 @@ fi
 echo 'local keychain_keys=('
 printf '%s\n' ${(qqf)"$(grep -Eshv '^\s*(#|$)' $local_file)"}
 echo ')'
-echo 'eval $(SHELL=/usr/bin/zsh keychain --eval --quiet $keychain_keys)'
+
+cat <<-'EOF'
+echo eval $(                        \
+	SHELL=/usr/bin/zsh              \
+	keychain --eval                 \
+	--dir $XDG_RUNTIME_DIR/keychain \
+	--quiet $keychain_keys          \
+)
+EOF
+
 echo 'unset keychain_keys'
