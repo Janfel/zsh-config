@@ -6,6 +6,7 @@
 
 - Zsh (obviously)
 - The [antibody](https://getantibody.github.io/) plugin manager
+- GNU AWK
 
 ## Installation
 
