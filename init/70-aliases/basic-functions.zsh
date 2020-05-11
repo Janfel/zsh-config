@@ -50,6 +50,7 @@ function downcase() {
 }
 
 function lines() {
+	: 'Print out the lines $1 through $2 of the input.'
 	if [[ $# < 2 ]]; then
 		print -u2 "$0: not enough arguments"
 		return 1
@@ -58,9 +59,12 @@ function lines() {
 }
 
 function linediff() {
+	: 'Print the diff of region $1,$2 of file $3
+	and region $4,$5 of file $6 or file $3.
+	The remaining arguments are passed to diff.'
 	if [[ $# < 5 ]]; then
 		print -u2 "$0: not enough arguments"
 		return 1
 	fi
-	diff <(sed -n "${1},${2}p" $5) <(sed -n "${3},${4}p" ${6:-$5})
+	diff <(sed -n "${1},${2}p" $5) <(sed -n "${3},${4}p" ${6:-$5}) $@[7,-1]
 }
