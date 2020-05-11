@@ -18,20 +18,9 @@ function clean() {
 }
 
 function compile() {
-	local awk_program
-	read -rd '' awk_program <<-'EOF'
-	!/^\s*(#|$)/ {
-		if (FILENAME ~ /\.zshx$/) {
-			system(FILENAME);
-			nextfile;
-		}
-		print;
-	}
-	EOF
-
 	for dir file in ${(kv)files}; do {
 		chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
-		awk $awk_program $dir/**/*.(zsh|zshx)(Nr) >$file
+		./compile.awk $dir/**/*.(zsh|zshx)(Nr) >$file
 		zcompile -UR $file
 		print -u2 "Created: $file"
 	} & done
