@@ -10,7 +10,7 @@ BEGINFILE {
 	ignore = 0
 }
 
-/^###if / {
+/^###if/ {
 	if (ignore) { ignore++ }
 	else {
 		print substr($0, 7) |& zsh
