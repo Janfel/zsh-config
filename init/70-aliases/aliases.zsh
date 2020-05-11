@@ -1,7 +1,5 @@
 # Zsh aliases.
 
-# Miscellaneous aliases.
-
 alias sudo='sudo '
 alias open=kde-open5
 alias o=kde-open5
@@ -11,8 +9,6 @@ alias ls='ls --color=auto'
 alias diff='diff --color=auto'
 alias du='du -h'
 alias println='print -l'
-
-alias sh='rlwrap sh'
 
 alias whose='pacman --query --owns'
 
