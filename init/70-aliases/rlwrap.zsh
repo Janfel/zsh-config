@@ -13,9 +13,3 @@ alias sh='rlwrap sh'
 ###if (($+commands[sbcl]))
 alias sbcl='rlwrap sbcl'
 ###endif
-
-# Chicken Scheme
-###if (($+commands[chicken-csc]))
-alias csi='rlwrap chicken-csi'
-alias csc='chicken-csc'
-###endif
