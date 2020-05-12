@@ -27,13 +27,7 @@ function compile() {
 	wait
 }
 
-function update() {
-	antibody update >&2
-	for script in ${~${(k)files}/%/'/**/update-script(Nr)'}; do
-		print -u2 "Sourcing: $script"
-		source $script
-	done
-}
+function update() { antibody update >&2 }
 
 # Print help if no arguments were passed.
 (( $# )) || printf '%s\n' $help_message
