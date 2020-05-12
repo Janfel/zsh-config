@@ -11,7 +11,10 @@ alias py2m='python2 -m'
 
 
 # Aliases for modules.
-alias venv="python -m venv"
+alias venv='python -m venv'
+###if ((!$+commands[pip]))
+alias pip='python -m pip'
+###endif
 
 
 # IPython

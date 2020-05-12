@@ -1,0 +1,5 @@
+#!/usr/bin/env -S sh -c 'antibody bundle <"$0"'
+
+zsh-users/zsh-completions
+# Pip completions
+https://gist.github.com/blueyed/54a257c411310a28805a kind:fpath
