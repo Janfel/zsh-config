@@ -17,11 +17,11 @@ printf '%s\n' ${(qqf)"$(grep -Eshv '^\s*(#|$)' $local_file)"}
 echo ')'
 
 cat <<-'EOF'
-echo eval $(                        \
-	SHELL=/usr/bin/zsh              \
-	keychain --eval                 \
-	--dir $XDG_RUNTIME_DIR/keychain \
-	--quiet $keychain_keys          \
+eval $( \
+	SHELL=/usr/bin/zsh      \
+	keychain --eval         \
+	--dir $XDG_RUNTIME_DIR  \
+	--quiet $keychain_keys  \
 )
 EOF
 
