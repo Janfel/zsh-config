@@ -13,8 +13,3 @@ alias sh='rlwrap sh'
 ###if (($+commands[sbcl]))
 alias sbcl='rlwrap sbcl'
 ###endif
-
-# Fennel
-###if (($+commands[fennel]))
-alias fennel='rlwrap fennel'
-###endif
