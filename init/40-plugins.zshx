@@ -9,3 +9,4 @@ robbyrussell/oh-my-zsh path:plugins/z
 # rupa/z provided by OMZ
 
 zsh-users/zsh-autosuggestions
+#marlonrichert/zsh-autocomplete
