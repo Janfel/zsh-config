@@ -18,6 +18,7 @@ function clean() {
 }
 
 function compile() {
+	export HOST=${HOST:-"$(hostname -s)"}
 	for dir file in ${(kv)files}; do {
 		chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
 		./compile.awk $dir/**/*.(zsh|zshx)(Nr) >$file
