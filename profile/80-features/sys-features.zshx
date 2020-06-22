@@ -1,0 +1,20 @@
+#!/usr/bin/env zsh
+# System Features
+
+# All installed packages belonging to the “jfl-patched” group.
+patched_pkgs=(${(f)"$(pacman -Qg jfl-patched)"})
+patched_pkgs=(${patched_pkgs#* })
+patched_pkgs=(${patched_pkgs%-git})
+
+features=()
+
+for x in arduino guile sbcl; do
+	[[ $patched_pkgs[(r)$x] ]] && features+=$x/xdg
+done
+
+if (($+commands[black])) \
+	&& command black --use-tabs --quiet 2>/dev/null; then
+	features+=black/tabs
+fi
+
+printf 'sys_features+=%s\n' ${(qq)features}
