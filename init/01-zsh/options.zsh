@@ -1,32 +1,32 @@
-# Zsh options.
+# Zsh Options
 
-setopt AUTO_CD              # Use cd on directory name
-setopt INTERACTIVE_COMMENTS # Comments in interactive shell
-setopt LONG_LIST_JOBS       # Longer job notifications
-setopt MULTIOS              # Allow multiple redirections
-setopt NO_BEEP              # Disable beeping
-setopt NO_CLOBBER           # Disable truncating files in redirections
-#setopt PROMPT_SUBST          # Allow expansions in prompt string
+# General
+setopt AUTO_CD                  # Use cd when calling name of directory.
+setopt INTERACTIVE_COMMENTS     # Enable comment sign in interactive shell.
+setopt LONG_LIST_JOBS           # Longer job notifications.
+setopt MULTIOS                  # Allow multiple redirections.
+setopt NO_BEEP                  # Disable beeping.
+setopt NO_CLOBBER               # Disable truncating files in redirections.
+#setopt PROMPT_SUBST            # Allow expansions in prompt string.
 
-# expansion
-setopt EXTENDED_GLOB   # More pattern features
-setopt RC_EXPAND_PARAM # Make a{b,c}d = abd acd
+# Expansion
+setopt EXTENDED_GLOB            # More pattern features.
+setopt RC_EXPAND_PARAM          # Make “a{b,c}d” expand to “abd acd”.
 
-# function scoping
-setopt LOCAL_OPTIONS  # Allow function scoped options
-setopt LOCAL_TRAPS    # Allow function scoped traps
-setopt LOCAL_PATTERNS # Allow disabled patterns per function
+# Function Scoping
+setopt LOCAL_OPTIONS            # Make shell options function scoped.
+setopt LOCAL_PATTERNS           # Make disabled patterns function scoped.
+setopt LOCAL_TRAPS              # Make traps function scoped.
 
-# directory stack
-setopt AUTO_PUSHD        # Push dirs onto dir stack
-setopt PUSHD_IGNORE_DUPS # Dedupe dir stack
-setopt PUSHD_MINUS       # Make cd -n the n-th to last directory
+# Directory Stack
+setopt AUTO_PUSHD               # Make “cd” push directories onto the stack.
+setopt PUSHD_IGNORE_DUPS        # Deduplicate the directory stack.
+setopt PUSHD_MINUS              # Address the stack from the top down.
 
-# history
-setopt EXTENDED_HISTORY       # record timestamp of command in HISTFILE
-setopt HIST_EXPIRE_DUPS_FIRST # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt HIST_IGNORE_DUPS       # ignore duplicated commands history list
-setopt HIST_IGNORE_SPACE      # ignore commands that start with space
-setopt HIST_VERIFY            # show command with history expansion to user before running it
-setopt INC_APPEND_HISTORY     # add commands to HISTFILE in order of execution
-setopt SHARE_HISTORY          # share command history data
+# History
+setopt EXTENDED_HISTORY         # Record timestamp of each command in HISTFILE.
+setopt HIST_EXPIRE_DUPS_FIRST   # Delete duplicates first when HISTFILE exceeds HISTSIZE.
+setopt HIST_IGNORE_DUPS         # Ignore duplicated commands history.
+setopt HIST_IGNORE_SPACE        # Ignore commands that start with space.
+setopt HIST_VERIFY              # Show history expanded commands before execution.
+setopt SHARE_HISTORY            # Share command history after each command.
