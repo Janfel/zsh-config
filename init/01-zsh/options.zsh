@@ -5,6 +5,7 @@ setopt INTERACTIVE_COMMENTS # Comments in interactive shell
 setopt LONG_LIST_JOBS       # Longer job notifications
 setopt MULTIOS              # Allow multiple redirections
 setopt NO_BEEP              # Disable beeping
+setopt NO_CLOBBER           # Disable truncating files in redirections
 #setopt PROMPT_SUBST          # Allow expansions in prompt string
 
 # expansion
