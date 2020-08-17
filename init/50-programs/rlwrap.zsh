@@ -11,5 +11,7 @@ alias sh='rlwrap sh'
 
 # Steel Bank Common Lisp
 ###if (($+commands[sbcl]))
-alias sbcl='rlwrap sbcl'
+alias sbcl='rlwrap sbcl --noinform'
+###else
+alias sbcl='sbcl --noinform'
 ###endif
