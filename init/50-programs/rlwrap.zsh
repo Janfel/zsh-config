@@ -8,10 +8,3 @@ alias dash='rlwrap dash'
 alias sh='rlwrap sh'
 ###endif /bin/sh
 ###endif dash
-
-# Steel Bank Common Lisp
-###if (($+commands[sbcl]))
-alias sbcl='rlwrap sbcl --noinform'
-###else
-alias sbcl='sbcl --noinform'
-###endif
