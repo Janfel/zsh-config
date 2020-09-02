@@ -4,7 +4,11 @@ alias sudo='sudo '
 alias open=kde-open5
 alias o=kde-open5
 
+# Safety
 alias cp='cp -i'
+alias rm='rm -i'
+alias mv='mv -i'
+
 alias diff='diff --color=auto'
 alias du='du -h'
 alias hd='hexdump -C'
