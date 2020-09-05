@@ -6,23 +6,23 @@ vals=(
 
 	LCC 'LC_ALL=C'
 
-	C '| wc -l'
-	F '| fmt - '
-	X '| xargs'
+	# C '| wc -l'
+	# F '| fmt - '
+	# X '| xargs'
 
 	# paging
-	L  '| less'
-	B  '| bat'
-	BL '| bat -l'
+	# L  '| less'
+	# B  '| bat'
+	# BL '| bat -l'
 
 	# tee
-	T  '| tee'
-	TE '| tee /dev/stderr'
+	# T  '| tee'
+	# TE '| tee /dev/stderr'
 
 	# sort uniq
-	S  '| sort'
-	U  '| uniq'
-	SU '| sort -u'
+	# S  '| sort'
+	# U  '| uniq'
+	# SU '| sort -u'
 
 	# silence output
 	QO  '>/dev/null'
@@ -30,15 +30,15 @@ vals=(
 	QA  '>/dev/null 2>&1'
 
 	# head and tail
-	H    '| head'
-	HL   '| head -n 20'
-	HLL  '| head -n 50'
-	HLLL '| head -n 100'
+	H1 '| head -n 10'
+	H2 '| head -n 20'
+	H3 '| head -n 50'
+	H4 '| head -n 100'
 
-	T    '| tail -n 10'
-	TL   '| tail -n 20'
-	TLL  '| tail -n 50'
-	TLLL '| tail -n 100'
+	T1 '| tail -n 10'
+	T2 '| tail -n 20'
+	T3 '| tail -n 50'
+	T4 '| tail -n 100'
 
 	# devices
 	DI '/dev/stdin'
