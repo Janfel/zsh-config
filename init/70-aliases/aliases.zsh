@@ -6,7 +6,7 @@ alias o=kde-open5
 
 # Safety
 alias cp='cp -i'
-alias rm='rm -i'
+alias rm='rm -I'
 alias mv='mv -i'
 
 alias diff='diff --color=auto'
