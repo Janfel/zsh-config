@@ -68,3 +68,7 @@ function linediff() {
 	fi
 	diff <(sed -n "${1},${2}p" $5) <(sed -n "${3},${4}p" ${6:-$5}) $@[7,-1]
 }
+
+function clipdiff() {
+	diff <(xclip -selection clipboard -o) <(xclip -selection clipboard -o | sed $1) $@[2,-1]
+}
