@@ -1,6 +1,6 @@
 # Haskell
 
-# Where GHCUP install GHC.
+# Where GHCUP installs GHC.
 export GHCUP_INSTALL_BASE_PREFIX="$XDG_USER_OPT/ghcup"
 
 # Cabal
