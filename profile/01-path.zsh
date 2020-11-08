@@ -1,10 +1,10 @@
 # Initialize $PATH.
 
 path=(
-	~/bin
-	~/opt/bin
-	# /usr/local/sbin
-	/usr/local/bin
-	/usr/bin
+	$HOME/bin
+	$HOME/opt/bin
+	#/usr/local/sbin
+	#/usr/local/bin
+	#/usr/bin
 	$path
 )
