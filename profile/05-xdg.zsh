@@ -3,6 +3,8 @@
 # This is a custom variable following the XDG naming scheme.
 # It defines the prefix used for the user-local file system hierarchy.
 export XDG_USER_BASE="$HOME/.local"
+# Remove this entry from PATH so it doesn’t appear sooner.
+path=(${path:#"$XDG_USER_BASE/bin"})
 path+=$XDG_USER_BASE/bin
 
 # The XDG variables are defined in terms of $XDG_USER_BASE.
