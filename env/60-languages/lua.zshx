@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+# Lua
+setopt EXTENDED_GLOB
+for ver in '' '5.2' '5.3' '5.4' '5.5'; do
+	(($+commands[lua$ver])) || continue
+	s="${ver:+_}${ver/./_}"
+	s="${(r:4:)s}"
+	cat <<-EOF
+	typeset -xUT LUA_PATH$s  lua_path$s  ';'
+	typeset -xUT LUA_CPATH$s lua_cpath$s ';'
+	EOF
+done

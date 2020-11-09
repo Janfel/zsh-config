@@ -1,0 +1,46 @@
+#!/usr/bin/env zsh
+# Lua
+
+cat <<'EOF'
+export LUA_INIT="@$XDG_CONFIG_HOME/lua/init.lua"
+export LUAROCKS_CONFIG="@$XDG_CONFIG_HOME/luarocks/config.lua"
+lua_path=('./?.lua' './?/init.lua')
+lua_cpath=('./?.so')
+EOF
+
+for v in '5.2' '5.3' '5.4' '5.5'; do
+	(($+commands[lua$v])) || continue
+	if [[ -r "${XDG_CONFIG_HOME:-"$HOME/.config"}/lua/init-$v.lua" ]]; then
+		printf '%s\n' "export LUA_INIT_${v/./_}=\"@\$XDG_CONFIG_HOME/lua/init-$v.lua\""
+	fi
+	if [[ -r "${XDG_CONFIG_HOME:-"$HOME/.config"}/luarocks/config-$v.lua" ]]; then
+		printf '%s\n' "export LUAROCK_CONFIG_${v/./_}=\"@\$XDG_CONFIG_HOME/luarocks/config-$v.lua\""
+	fi
+	cat <<EOF
+lua_path_${v/./_}=(
+	"\$XDG_USER_BASE/share/lua/$v/?.lua"
+	"\$XDG_USER_BASE/share/lua/$v/?/init.lua"
+	"\$XDG_USER_BASE/lib/lua/$v/?.lua"
+	"\$XDG_USER_BASE/lib/lua/$v/?/init.lua"
+	\$lua_path_${v/./_}
+	'/usr/local/share/lua/$v/?.lua'
+	'/usr/local/share/lua/$v/?/init.lua'
+	'/usr/local/lib/lua/$v/?.lua'
+	'/usr/local/lib/lua/$v/?/init.lua'
+	'/usr/share/lua/$v/?.lua'
+	'/usr/share/lua/$v/?/init.lua'
+	'/usr/lib/lua/$v/?.lua'
+	'/usr/lib/lua/$v/?/init.lua'
+	\$lua_path
+)
+lua_cpath_${v/./_}=(
+	"\$XDG_USER_BASE/lib/lua/$v/?.so"
+	'/usr/local/lib/lua/$v/?.so'
+	'/usr/lib/lua/$v/?.so'
+	\$lua_cpath_${v/./_}
+	'/usr/local/lib/lua/$v/loadall.so'
+	'/usr/lib/lua/$v/loadall.so'
+	\$lua_cpath
+)
+EOF
+done
