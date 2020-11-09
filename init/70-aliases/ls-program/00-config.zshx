@@ -8,4 +8,4 @@ elif (($+commands[lsd])); then
 	ls_prog='lsd'
 fi
 
-grep -Eshv '^\s*(#|$)' "${0%/*}/$ls_prog.ztxt"
+grep -Eshv '^\s*(#|$)' "${0:h}/$ls_prog.ztxt"
