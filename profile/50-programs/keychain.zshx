@@ -13,10 +13,10 @@ if [[ ! -r $local_file ]]; then
 fi
 
 echo 'local keychain_keys=('
-printf '%s\n' ${(qqf)"$(grep -Eshv '^\s*(#|$)' $local_file)"}
+printf '\t%s\n' ${(qqf)"$(grep -Eshv '^\s*(#|$)' $local_file)"}
 echo ')'
 
-cat <<-'EOF'
+cat <<'EOF'
 eval $( \
 	SHELL=/usr/bin/zsh      \
 	keychain --eval         \

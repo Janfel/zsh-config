@@ -1,4 +1,4 @@
-# Zsh aliases.
+# Zsh Aliases
 
 alias sudo='sudo '
 alias open=kde-open5
