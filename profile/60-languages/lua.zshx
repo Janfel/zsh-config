@@ -3,7 +3,7 @@
 
 cat <<'EOF'
 export LUA_INIT="@$XDG_CONFIG_HOME/lua/init.lua"
-export LUAROCKS_CONFIG="@$XDG_CONFIG_HOME/luarocks/config.lua"
+export LUAROCKS_CONFIG="$XDG_CONFIG_HOME/luarocks/config.lua"
 lua_path=('./?.lua' './?/init.lua')
 lua_cpath=('./?.so')
 EOF
@@ -14,7 +14,7 @@ for v in '5.2' '5.3' '5.4' '5.5'; do
 		printf '%s\n' "export LUA_INIT_${v/./_}=\"@\$XDG_CONFIG_HOME/lua/init-$v.lua\""
 	fi
 	if [[ -r "${XDG_CONFIG_HOME:-"$HOME/.config"}/luarocks/config-$v.lua" ]]; then
-		printf '%s\n' "export LUAROCK_CONFIG_${v/./_}=\"@\$XDG_CONFIG_HOME/luarocks/config-$v.lua\""
+		printf '%s\n' "export LUAROCK_CONFIG_${v/./_}=\"\$XDG_CONFIG_HOME/luarocks/config-$v.lua\""
 	fi
 	cat <<EOF
 lua_path_${v/./_}=(
