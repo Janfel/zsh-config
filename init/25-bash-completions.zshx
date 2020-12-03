@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+# Source Bash completion scripts.
+
+# Initialize the Bash completion engine.
+echo 'autoload -Uz bashcompinit && bashcompinit'
+
+cmds=(
+	addpart
+	wg wg-quick
+)
+
+for c in $cmds; do
+	file="/usr/share/bash-completion/completions/$c"
+	if (($+commands[$c])) && [[ -r $file ]]; then
+		echo "source '$file'"
+	fi
+done
