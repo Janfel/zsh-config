@@ -6,8 +6,13 @@ echo 'autoload -Uz bashcompinit && bashcompinit'
 
 cmds=(
 	addpart
-	wg wg-quick
+	wg
 )
+
+cat <<'EOF'
+function shopt() {}
+function compopt() {}
+EOF
 
 for c in $cmds; do
 	file="/usr/share/bash-completion/completions/$c"
