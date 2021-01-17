@@ -8,6 +8,8 @@ alias o=kde-open5
 alias cp='cp -i'
 alias rm='rm -I'
 alias mv='mv -i'
+alias rename='rename -i'
+alias perl-rename='perl-rename -i'
 
 alias diff='diff --color=auto'
 alias du='du -h'
