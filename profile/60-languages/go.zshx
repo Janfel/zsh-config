@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-# Go
-
-case $HOST in
-PhantomJFL) print 'gopath=($HOME/var/go $gopath)' ;;
-TeslaJFL|*) print 'gopath=($HOME/go     $gopath)' ;;
-esac
-
-print 'path+=(${^gopath}/bin)'
