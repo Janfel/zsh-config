@@ -1,5 +1,5 @@
 # Java
 
-typeset -xUT _JAVA_OPTIONS java_options ' '
-#typeset -xUT  _SILENT_JAVA_OPTIONS silent_java_options ' '
-#alias java='java $_SILENT_JAVA_OPTIONS'
+# This variable replaces the undocumented legacy variable _JAVA_OPTIONS.
+typeset -xUT JAVA_TOOL_OPTIONS java_tool_options ' '
+typeset -xUT JDK_JAVA_OPTIONS  jdk_java_options  ' '
