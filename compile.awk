@@ -8,20 +8,35 @@ BEGINFILE {
 		nextfile
 	}
 	ignore = 0
+	elif_done = 0
+}
+
+function zsh_eval(command) {
+	print command    |& zsh
+	print "print $?" |& zsh
+	zsh |& getline err
+	return !err
 }
 
 /^###if/ {
-	if (ignore) { ignore++ }
-	else {
-		print substr($0, 7) |& zsh
-		print "print $?"    |& zsh
-		zsh |& getline err
-		if (err) ignore++
-	}
+	if (ignore) ignore++
+	else ignore = !zsh_eval(substr($0, 7))
 }
 
-/^###else/  && ignore < 2 { ignore = !ignore }
-/^###endif/ && ignore { ignore-- }
+/^###elif/ && ignore < 2 {
+	if (!ignore) elif_done = 1
+	ignore = elif_done || !zsh_eval(substr($0, 9))
+}
+
+/^###else/ && ignore < 2 {
+	if (!ignore) elif_done = 1
+	ignore = elif_done
+}
+
+/^###endif/ {
+	if (ignore) ignore--
+	if (!ignore) elif_done = 0
+}
 
 # Match any line that is not empty and not a comment.
 !/^\s*(#|$)/ && !ignore { print }
