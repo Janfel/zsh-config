@@ -54,4 +54,4 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 # VM only handles command line input/output, so it is rare that one would need
 # to change its VM options. The actual build is run by the Gradle daemon, which
 # is not affected by this environment variable.
-#export GRADLE_OPTS
+# gradle_opts=()
