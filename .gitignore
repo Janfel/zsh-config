@@ -7,3 +7,6 @@
 
 # Backup dir
 /bak/
+
+# Test files
+/test*
