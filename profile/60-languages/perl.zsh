@@ -1,8 +1,8 @@
 # Perl
 
 # Enable unicode handling in Perl.
-# See man perlrun lines 220 and 1090.
-export PERL_UNICODE=SDA
+# Search “man perlrun” for “-C” and “PERL_UNICODE”.
+export PERL_UNICODE=SDAL
 
 perl5opt=(
 	'-Mutf8'
