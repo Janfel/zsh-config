@@ -43,3 +43,15 @@ java_tool_options+=('-Dawt.useSystemAAFontSettings=gasp')
 # Affects only applications started using the ‘java’ command.
 # Supported since Java 9, will be ignored by Java 8.
 #jdk_java_options=($jdk_java_options)
+
+
+# Gradle
+
+# Specifies the Gradle user home directory defaulting to “$USER_HOME/.gradle”.
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+
+# Specifies JVM arguments to use when starting the Gradle client VM. The client
+# VM only handles command line input/output, so it is rare that one would need
+# to change its VM options. The actual build is run by the Gradle daemon, which
+# is not affected by this environment variable.
+#export GRADLE_OPTS
