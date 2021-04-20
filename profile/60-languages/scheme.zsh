@@ -14,6 +14,8 @@ chicken_include_path=(
 # CHICKEN_C_INCLUDE_PATH
 # CHICKEN_C_LIBRARY_PATH
 
+# CHICKEN_DOC_REPOSITORY='/usr/local/share/doc/chicken'
+
 # Guile Scheme
 
 export GUILE_HISTORY="$RLWRAP_HOME/guile_history"
