@@ -12,7 +12,7 @@ chicken_include_path=($chicken_repository_path)
 # CHICKEN_C_LIBRARY_PATH
 
 # Where the chicken-doc documentation can be found.
-CHICKEN_DOC_REPOSITORY='/usr/local/share/doc/chicken'
+export CHICKEN_DOC_REPOSITORY='/usr/local/share/doc/chicken'
 
 # Guile Scheme
 
