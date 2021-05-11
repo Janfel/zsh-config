@@ -5,6 +5,10 @@ export PYTHON_EGG_CACHE="$XDG_CACHE_HOME/python/eggs"
 export PYTHONUSERBASE="$XDG_USER_BASE"
 #path+=$PYTHONUSERBASE/bin
 
+# PipX
+export PIPX_HOME="$XDG_DATA_HOME/python/pipx"
+export PIPX_BIN_DIR="$XDG_BIN_HOME"
+
 # IPython
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 
