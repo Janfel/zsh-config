@@ -8,7 +8,7 @@ lua_path=('./?.lua' './?/init.lua')
 lua_cpath=('./?.so')
 EOF
 
-for v in '5.2' '5.3' '5.4' '5.5'; do
+for v in '5.1' '5.2' '5.3' '5.4' '5.5'; do
 	(($+commands[lua$v])) || continue
 	if [[ -r "${XDG_CONFIG_HOME:-"$HOME/.config"}/lua/init-$v.lua" ]]; then
 		printf '%s\n' "export LUA_INIT_${v/./_}=\"@\$XDG_CONFIG_HOME/lua/init-$v.lua\""
