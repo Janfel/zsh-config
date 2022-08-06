@@ -16,9 +16,13 @@ java_tool_options=(
 	# Java config root
 	# "-Djava.util.prefs.userRoot='$XDG_CONFIG_HOME/java'"
 
-	# GTK Look-and-Feel
-	'-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-	'-Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+	# Metal Look-and-Feel
+	'-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel'
+	'-Dswing.crossplatformlaf=javax.swing.plaf.metal.MetalLookAndFeel'
+
+	# GTK Look-and-Feel (looks very bad when using dark mode)
+	# '-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+	# '-Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 	# OpenGL Renderer
 	'-Dsun.java2d.opengl=true'
