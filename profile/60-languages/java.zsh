@@ -8,6 +8,13 @@ export JAVA_HOME='/usr/lib/jvm/default'
 export JRE_HOME='/usr/lib/jvm/default-runtime'
 export JAVA_FONTS='/usr/share/fonts/TTF'
 
+# List of Look-and-Feel classes:
+# javax.swing.plaf.metal.MetalLookAndFeel
+# javax.swing.plaf.nimbus.NimbusLookAndFeel
+# com.sun.java.swing.plaf.gtk.GTKLookAndFeel
+# com.sun.java.swing.plaf.motif.MotifLookAndFeel
+# com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+
 # Affects applications and tools.
 # The documented replacement for _JAVA_OPTIONS.
 java_tool_options=(
@@ -15,10 +22,6 @@ java_tool_options=(
 
 	# Java config root
 	# "-Djava.util.prefs.userRoot='$XDG_CONFIG_HOME/java'"
-
-	# Metal Look-and-Feel
-	'-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel'
-	'-Dswing.crossplatformlaf=javax.swing.plaf.metal.MetalLookAndFeel'
 
 	# GTK Look-and-Feel (looks very bad when using dark mode)
 	# '-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
