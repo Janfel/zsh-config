@@ -1,14 +1,17 @@
 # Perl
 
+# See: https://stackoverflow.com/questions/6162484/why-does-modern-perl-avoid-utf-8-by-default
+
 # Enable unicode handling in Perl.
 # Search “man perlrun” for “-C” and “PERL_UNICODE”.
-export PERL_UNICODE=SDAL
 
-perl5opt=(
-	'-Mutf8'
-	'-Mfeature=unicode_strings'
-	$perl5opt
-)
+# export PERL_UNICODE=SAL
+#
+# perl5opt=(
+# 	'-Mutf8'
+# 	'-Mfeature=unicode_strings'
+# 	$perl5opt
+# )
 
 # Install packages into ~/.local.
 export PERL_BASE="$XDG_USER_BASE"
