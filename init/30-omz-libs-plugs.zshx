@@ -1,5 +1,7 @@
 #!/usr/bin/env -S sh -c 'antibody bundle <"$0"'
 
-robbyrussell/oh-my-zsh path:lib/completion.zsh
-robbyrussell/oh-my-zsh path:lib/key-bindings.zsh
-robbyrussell/oh-my-zsh path:lib/git.zsh
+ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+ohmyzsh/ohmyzsh path:lib/compfix.zsh
+ohmyzsh/ohmyzsh path:lib/completion.zsh
+ohmyzsh/ohmyzsh path:lib/key-bindings.zsh
+ohmyzsh/ohmyzsh path:lib/git.zsh
