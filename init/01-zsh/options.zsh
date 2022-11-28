@@ -16,7 +16,7 @@ setopt HIST_EXPIRE_DUPS_FIRST   # Delete duplicates first when HISTFILE exceeds 
 setopt HIST_IGNORE_DUPS         # Ignore duplicated commands history.
 setopt HIST_IGNORE_SPACE        # Ignore commands that start with space.
 setopt HIST_VERIFY              # Show history expanded commands before execution.
-setopt SHARE_HISTORY            # Share command history after each command.
+setopt SHARE_HISTORY            # Share command history after each command. Also make it more SSD friendly: https://www.zsh.org/mla/users/2022/msg00731.html
 
 # Input/Output
 setopt NO_CLOBBER               # Disable truncating files in redirections.
