@@ -12,6 +12,9 @@ export PIPX_BIN_DIR="$XDG_BIN_HOME"
 # IPython
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 
+# Conda
+export CONDA_AUTO_ACTIVATE_BASE='false'
+
 # Pylint
 export PYLINTHOME="$XDG_CACHE_HOME/pylint"
 export PYLINTRC="$XDG_CONFIG_HOME/python/pylint.conf"

@@ -24,3 +24,10 @@ alias ipy=ipython
 ###if (($+commands[ipython2]))
 alias ipy2=ipython2
 ###endif
+
+# Conda
+###if (($+commands[conda]))
+__conda_setup="$(conda shell.zsh hook 2> /dev/null)"
+((!?)) && eval $__conda_setup
+unset __conda_setup
+###endif
