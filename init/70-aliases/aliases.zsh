@@ -4,6 +4,8 @@ alias sudo='sudo '
 alias open=kde-open5
 alias o=kde-open5
 
+alias :q=exit
+
 # Safety
 alias cp='cp -i'
 alias rm='rm -I'
