@@ -1,3 +1,3 @@
 # VSCode
 
-export VSCODE_EXTENSIONS="$XDG_DATA_HOME/code-oss/extensions"
+export VSCODE_EXTENSIONS="$XDG_DATA_HOME/CodeExtensions"
