@@ -22,3 +22,5 @@ alias rd='rmdir'
 alias tp='trash-put'
 alias whose='pacman --query --owns'
 alias xd='hexdump -C'
+
+alias neovim='env NEOVIM_CONFIG_LEVEL=3 nvim'
