@@ -2,7 +2,9 @@
 
 ls_prog='ls'
 
-if   (($+commands[exa])); then
+if   (($+commands[eza])); then
+	ls_prog='eza'
+elif (($+commands[exa])); then
 	ls_prog='exa'
 elif (($+commands[lsd])); then
 	ls_prog='lsd'
