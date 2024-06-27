@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-cd ${ZDOTDIR:-$HOME} || exit 1
+cd ${ZDOTDIR:-$HOME/.config/zsh} || exit 1
 
 local -A files=(init .zshrc env .zshenv profile .zprofile)
 local help_message
