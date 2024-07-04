@@ -35,10 +35,10 @@ alias lta='lsd --tree -A'
 ###else
 ###warn Selected ls + tree
 
-alias l='ls -LF'
-alias la='ls -LAF'
-alias ll='ls -lLhF'
-alias lla='ls -lLhAF'
+alias l='ls -F'
+alias la='ls -AF'
+alias ll='ls -lhF'
+alias lla='ls -lhAF'
 alias lt='tree'
 alias lta='tree -a'
 
