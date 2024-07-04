@@ -1,7 +1,0 @@
-alias l=eza
-alias ll='eza -l'
-alias la='eza -a'
-alias lla='eza -la'
-alias lg='eza -l --git'
-alias lt='eza -T'
-alias lta='eza -Ta'
