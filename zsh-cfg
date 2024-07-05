@@ -19,13 +19,13 @@ function clean() {
 
 function compile() {
 	export HOST=${HOST:-"$(hostname -s)"}
-	for dir file in ${(kv)files}; do {
+	for dir file in ${(kv)files}; do
+		print -u2 "Building: $dir"
 		chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
 		./compile.awk $dir/**/*.(zsh|zshx)(Nr) >$file
 		zcompile -UR $file
 		print -u2 "Created: $file"
-	} & done
-	wait
+	done
 }
 
 function update() { antibody update >&2 }
