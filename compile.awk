@@ -12,8 +12,7 @@ BEGINFILE {
 }
 
 function zsh_eval(command) {
-	print command    |& zsh
-	print "print $?" |& zsh
+	printf("{ %s } >&-; print $?;\n", command) |& zsh
 	zsh |& getline err
 	return !err
 }
