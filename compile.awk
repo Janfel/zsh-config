@@ -17,22 +17,22 @@ function zsh_eval(command) {
 	return !err
 }
 
-/^###if/ {
+/^###if\>/ {
 	if (ignore) ignore++
-	else ignore = !zsh_eval(substr($0, 7))
+	else ignore = !zsh_eval(substr($0, 6))
 }
 
-/^###elif/ && ignore < 2 {
+/^###elif\>/ && ignore < 2 {
 	if (!ignore) elif_done = 1
-	ignore = elif_done || !zsh_eval(substr($0, 9))
+	ignore = elif_done || !zsh_eval(substr($0, 8))
 }
 
-/^###else/ && ignore < 2 {
+/^###else\>/ && ignore < 2 {
 	if (!ignore) elif_done = 1
 	ignore = elif_done
 }
 
-/^###endif/ {
+/^###endif\>/ {
 	if (ignore) ignore--
 	if (!ignore) elif_done = 0
 }
