@@ -37,6 +37,10 @@ function zsh_eval(command) {
 	if (!ignore) elif_done = 0
 }
 
+/^###warn\>/ && !ignore {
+	print(FILENAME ":" substr($0, 8)) > "/dev/stderr"
+}
+
 # Match any line that is not empty and not a comment.
 !/^\s*(#|$)/ && !ignore { print }
 
