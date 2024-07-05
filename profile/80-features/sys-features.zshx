@@ -2,7 +2,7 @@
 # System Features
 
 # All installed packages belonging to the “jfl-patched” group.
-patched_pkgs=(${(f)"$(pacman -Qg jfl-patched)"})
+patched_pkgs=(${(f)"$(pacman -Qg jfl-patched 2>&-)"})
 patched_pkgs=(${patched_pkgs#* })
 patched_pkgs=(${patched_pkgs%-git})
 
@@ -17,4 +17,7 @@ if (($+commands[black])) \
 	features+=black/tabs
 fi
 
-printf 'sys_features+=%s\n' ${(qq)features}
+if (($#features)); then
+	print -u2 "$0:Found features" "$features[@]"
+	printf 'sys_features+=%s\n' ${(qq)features}
+fi
