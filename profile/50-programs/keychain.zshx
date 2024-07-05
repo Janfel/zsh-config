@@ -1,15 +1,23 @@
 #!/usr/bin/env zsh
+set -euo pipefail
+
 # Keychain
+
+if [[ "$(systemctl --user is-enabled ssh-agent.service)" == enabled ]]; then
+	print -u2 "$0: ssh-agent.service is enabled, skipping"
+	exit
+fi
+
 if ((!$+commands[keychain])); then
-	print -u2 "skipping $0: command not found: keychain"
-	exit 1
+	print -u2 "$0: keychain is not installed, skipping"
+	exit
 fi
 
 local_file=$HOME/.ssh/keychain_keys
 
-if [[ ! -r $local_file ]]; then
-	print -u2 "skipping $0: file not readable: $local_file"
-	exit 1
+if [[ ! -f $local_file ]]; then
+	print -u2 "$0: No keychain_keys file, skipping"
+	exit
 fi
 
 echo 'local keychain_keys=('
