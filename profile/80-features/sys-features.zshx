@@ -14,8 +14,8 @@ for x in arduino guile sbcl; do
 	if (($+patched_pkgs[(re)$x])) features+="$x/xdg"
 done
 
-if (($+commands[black])) && { command black --use-tabs --quiet 2>&- }; then
-	features+=black/tabs
+if { command black --use-tabs --code '' 2>/dev/null }; then
+	features+='black/tabs'
 fi
 
 if (($#features)); then
