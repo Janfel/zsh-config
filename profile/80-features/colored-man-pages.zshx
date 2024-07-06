@@ -1,0 +1,53 @@
+#!/usr/bin/env zsh
+set -euo pipefail
+
+# Colored Man Pages
+
+if ((!$+commands[man])); then
+	print -u2 "$0: man is not installed, skipping"
+	exit
+fi
+
+if ((!$+commands[less])); then
+	print -u2 "$0: less is not installed, skipping"
+	exit
+fi
+
+# Set groff output formatting to use legacy overstrike sequences
+# instead of SGR escape sequences. This is needed so `less` creates
+# it’s own SGR escape sequences subject to `$LESS_TERMCAP_xx`.
+#
+# See man:grotty(1).
+
+function() {
+	local manroffopt='-c'
+	print -r "export MANROFFOPT=${(qq)manroffopt}"
+}
+
+# Set `$LESS_TERMCAP_xx` when invoking `less` from `man`. These
+# variables specify the escape sequences that `less` uses when
+# formatting it’s output. The values are SGR escape sequences that
+# enable/disable colored output on the terminal.
+#
+# Something similar can be achieved using the `-D` option for `less`,
+# but there would be no way to make text bold/italic/etc.
+#
+# See man:less(1)
+# See https://wikipedia.org/wiki/ANSI_escape_code
+
+function() {
+	local -a eseq
+	eseq+=(mb $'\E[1;31m'    ) # begin blink
+	eseq+=(md $'\E[1;36m'    ) # begin bold
+	eseq+=(me $'\E[0m'       ) # reset bold/blink
+	eseq+=(so $'\E[01;44;33m') # begin reverse video
+	eseq+=(se $'\E[0m'       ) # reset reverse video
+	eseq+=(us $'\E[1;32m'    ) # begin underline
+	eseq+=(ue $'\E[0m'       ) # reset underline
+
+	local -a terms
+	printf -v terms 'LESS_TERMCAP_%s=%s' "${(@q-)eseq}"
+
+	local manpager="env $terms less"
+	print -r "export MANPAGER=${(qqqq)manpager}"
+}
