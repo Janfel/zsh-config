@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 # System Features
 
+set -euo pipefail
+
 # All installed packages belonging to the “jfl-patched” group.
 patched_pkgs=(${(f)"$(pacman -Qg jfl-patched 2>&-)"})
 patched_pkgs=(${patched_pkgs#* })
@@ -9,15 +11,14 @@ patched_pkgs=(${patched_pkgs%-git})
 features=()
 
 for x in arduino guile sbcl; do
-	[[ $patched_pkgs[(r)$x] ]] && features+=$x/xdg
+	if (($+patched_pkgs[(re)$x])) features+="$x/xdg"
 done
 
-if (($+commands[black])) \
-	&& command black --use-tabs --quiet 2>/dev/null; then
+if (($+commands[black])) && { command black --use-tabs --quiet 2>&- }; then
 	features+=black/tabs
 fi
 
 if (($#features)); then
-	print -u2 "$0:Found features" "$features[@]"
-	printf 'sys_features+=%s\n' ${(qq)features}
+	print -ru2 "$0: Found features $features"
+	print -r "sys_features+=(${${(@qq)features}})"
 fi
