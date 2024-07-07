@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-
-local files=(/usr/share/fzf/*.zsh(N.R))
-(($#files)) && grep -Eshv '^\s*(#|$)' $files
