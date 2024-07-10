@@ -4,6 +4,8 @@
 
 # Highlighting BEFORE substring search but AFTER everything else
 
+# The version by ZDharma is horribly slow on large buffers.
+
 zsh-users/zsh-syntax-highlighting
 #zdharma/fast-syntax-highlighting
 
