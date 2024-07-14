@@ -1,8 +1,7 @@
 # Zsh Aliases
 
+# Make it so aliases after ‘sudo’ are expanded.
 alias sudo='sudo '
-alias open=kde-open5
-alias o=kde-open5
 
 alias :q=exit
 
