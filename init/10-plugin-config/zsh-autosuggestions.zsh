@@ -9,5 +9,6 @@
 # The recommended value is 20.
 typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
 
-# Ignore history elements longer than 50 characters.
-typeset -g ZSH_AUTOSUGGEST_HISTORY_IGNORE='?(#c50,)'
+# Ignore history elements longer than 120 characters.
+# I have tried 50 before, but found that value too small.
+typeset -g ZSH_AUTOSUGGEST_HISTORY_IGNORE='?(#c120,)'
