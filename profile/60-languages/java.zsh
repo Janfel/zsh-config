@@ -34,7 +34,7 @@ export JAVA_FONTS='/usr/share/fonts/TTF'
 # GTK Version
 # Used by JavaFX, the GTK-LaF and other components.
 # Java 9+ defaults to GTK3 (?), while Java 8 defaults to GTK2.
-'-Djdk.gtk.version=3'
+# java_tool_options+='-Djdk.gtk.version=3'
 
 # JDK_JAVA_OPTIONS
 # Affects only applications started using the ‘java’ command.
