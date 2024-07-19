@@ -9,6 +9,7 @@ setopt PUSHD_MINUS              # Address the stack from the top down.
 # Expansion and Globbing
 setopt EXTENDED_GLOB            # More pattern features.
 setopt RC_EXPAND_PARAM          # Make ‘a{b,c}d’ expand to ‘abd acd’.
+setopt NO_BANG_HIST             # Disable history patterns starting with ‘!’.
 
 # History
 setopt EXTENDED_HISTORY         # Record timestamp of each command in HISTFILE.
