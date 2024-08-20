@@ -4,4 +4,4 @@
 export BAT_PAGER='less --raw-control-chars --quit-if-one-screen'
 
 # OneDark theme.
-export BAT_THEME='OneHalfDark'
+export BAT_THEME='Coldark-Dark'
