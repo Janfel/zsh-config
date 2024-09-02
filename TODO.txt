@@ -1,0 +1,4 @@
+TODO
+
+- Reevaluate/reimplement OMZ/keybindings.zsh since it messes up the default keybindings.
+  https://robiokidenis.medium.com/mastering-zsh-keyboard-shortcuts-for-efficient-shell-navigation-and-editing-5946b5afa698
