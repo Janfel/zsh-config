@@ -80,8 +80,6 @@ upgrade_zsh
 
 ## Meta
 
-Jan Felix Langenbach – o.hase3@gmail.com
-
 Distributed under the GPLv3. See `LICENSE` for more information.
 
 [https://github.com/Janfel](https://github.com/Janfel/)
