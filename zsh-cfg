@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 cd ${ZDOTDIR:-$HOME/.config/zsh} || exit 1
 
-local -A files=(init .zshrc env .zshenv profile .zprofile)
+local -A files=(init .zshrc env .zshenv profile-minimal .zprofile)
 local help_message
 read -rd '' help_message <<EOF
 Usage: $0 <command>

@@ -1,0 +1,62 @@
+#!/usr/bin/env zsh
+# Common environment variables that are used by many programs.
+
+editors=(
+	micro
+	nano
+)
+
+visuals=(
+	nvim
+	vim
+)
+
+pagers=(
+	less
+	more
+)
+
+browsers=(
+	firefox
+)
+
+clibrowsers=(
+	links
+	lynx
+	elinks
+)
+
+for e in $editors; do
+	if (($+commands[$e])); then
+		printf 'export EDITOR=%s\n' ${(qq)commands[$e]}
+		break
+	fi
+done
+
+for v in $visuals; do
+	if (($+commands[$v])); then
+		printf 'export VISUAL=%s\n' ${(qq)commands[$v]}
+		break
+	fi
+done
+
+for p in $pagers; do
+	if (($+commands[$p])); then
+		printf 'export PAGER=%s\n' ${(qq)commands[$p]}
+		break
+	fi
+done
+
+print 'if [[ -n $DISPLAY ]]; then'
+for b in $browsers; do
+	if (($+commands[$b])); then
+		printf 'export BROWSER=%s\n' ${(qq)commands[$b]}
+	fi
+done
+print 'else'
+for b in $clibrowsers; do
+	if (($+commands[$b])); then
+		printf 'export BROWSER=%s\n' ${(qq)commands[$b]}
+	fi
+done
+print 'fi'
