@@ -18,7 +18,7 @@ function clean() {
 }
 
 function compile() {
-	export HOST=${HOST:-"$(hostname -s)"}
+	export HOST=${HOST:-"$(uname -n)"}
 	for dir file in ${(kv)files}; do
 		print -u2 "Building: $dir"
 		chmod +x $dir/**/*.zshx(Nr^x) 2>/dev/null
